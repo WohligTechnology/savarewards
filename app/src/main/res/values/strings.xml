@@ -1,0 +1,152 @@
+<resources>
+    <string name="app_name">Sava</string>
+    <string name="category">Category</string>
+    <string name="gold">GOLD</string>
+    <string name="total_points">TOTAL POINTS</string>
+    <string name="Loyalty">Loyalty</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="fb">Facebook</string>
+    <string name="gplus">Google+</string>
+    <string name="email">Email</string>
+    <string name="skipnproceed">Skip and Proceed?</string>
+    <string name="plsverifynumber">Please verify your Mobile Number</string>
+    <string name="sentotp">We have sent OTP to</string>
+    <string name="number">+91 9555554444</string>
+    <string name="enterotp">Enter your OTP</string>
+    <string name="digit">4.59</string>
+    <string name="submit">Submit</string>
+    <string name="resendotp">Resend OTP</string>
+    <string name="callme">Call me</string>
+    <string name="emailid">Email Address</string>
+    <string name="login">Log In</string>
+    <string name="alreadymember">Already a member?</string>
+    <string name="signup">Sign Up</string>
+    <string name="notifications">Notifications</string>
+    <string name="fluer">Fluer de Lys Patisserie</string>
+    <string name="minspend">Min spend £7</string>
+    <string name="modernmeadowcafe">Modern Meadow Cafe 1.9mi</string>
+    <string name="expires">Expires in 7 hours</string>
+    <string name="fluer_price">£3.50</string>
+    <string name="free">FREE</string>
+    <string name="chocopastry">Chocolate pastry £8.99</string>
+    <string name="upto10off">upto 10% Off</string>
+    <string name="grilledchickensandwich">Grilled Chicken sandwich</string>
+    <string name="cancelledchickenprice">£14.50</string>
+    <string name="nowpricechicken">£10.77</string>
+    <string name="otheroffers">See other Offers(5)</string>
+    <string name="somethingwrong">Something wrong? Report an error</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="other">Other</string>
+    <string name="menuincorrect">Menu Incorrect/Outdated</string>
+    <string name="maheshmaurya">Mahesh Maurya</string>
+    <string name="code">+ 44</string>
+    <string name="password">Password</string>
+    <string name="iagree">I agree to the Sava <font colour='#00bfff'>Terms and Conditions </font>and  <font colour='#00bfff'>Privacy Policy </font></string>
+    <string name="alreadyhaveacc">Already have an account?</string>
+    <string name="name">Name</string>
+    <string name="plsverifyto">Please verify your mobile number to complete your sign up</string>
+    <string name="mobileno">Mobile Number</string>
+    <string name="lastvisited">Last visited 6 hours ago</string>
+    <string name="rewards">Rewards</string>
+    <string name="grab3">Grab a coffee on 3rd stamp</string>
+    <string name="grab6">Grab a coffee on 6th stamp</string>
+    <string name="grab8">Grab a full meal on 8th stamp</string>
+    <string name="grab10">Grab a full meal on 10th stamp</string>
+    <string name="grab15">Grab a full meal on 15th stamp</string>
+    <string name="redeemed">REDEEMED</string>
+    <string name="transferred">TRANSFERRED</string>
+    <string name="usenow">USE NOW</string>
+    <string name="favorites">Favorites</string>
+    <string name="nearby">Near By</string>
+    <string name="tenmiles">10 mi</string>
+    <string name="profilename">Micheal Perera</string>
+    <string name="profileemail">michael.perera@gmail.com</string>
+    <string name="logout">Logout</string>
+    <string name="scan">Scan Code</string>
+    <string name="plsscan">Please scan the code from the merchant device Click here</string>
+    <string name="entermanually">OR Enter code manually</string>
+    <string name="hello_blank_fragment">Hello blank fragment1</string>
+    <string name="confirm_redemption">Confirm Redemption</string>
+    <string name="cafe_coffee_day">CAFE COFFEE DAY</string>
+    <string name="malad_west">Malad West</string>
+    <string name="free_any_size_pizza">FREE ANY SIZE PIZZA</string>
+    <string name="you_get">YOU GET</string>
+    <string name="_650_points">650 points</string>
+    <string name="cafe_coffe_day_points">Cafe Coffe Day Points</string>
+    <string name="you_use">YOU USE</string>
+    <string name="loyalty_prog">LOYALTY PROG.</string>
+    <string name="slide_to_confirm">Slide to confirm</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_redeemed_a_free_coffee">You redeemed a free coffee</string>
+    <string name="cafe_coffee_day_loyalty">Cafe coffee day loyalty</string>
+    <string name="free_beer_or_house_wine">Free Beer or house wine</string>
+    <string name="carte_menu_with_a_cham">Carte menu with a cham</string>
+    <string name="_33_off_on_your_first_visit">33% off on your first visit</string>
+    <string name="meal_from_the_a_la_carte_menu_with_a_cham">Meal from the a la carte menu with a cham</string>
+    <string name="more_offers_5">More offers(5)</string>
+    <string name="_1730_points">1730 points</string>
+    <string name="new_balance">NEW BALANCE</string>
+    <string name="_6543_59">$6543.59</string>
+    <string name="you_earned">YOU EARNED</string>
+    <string name="you_spent">YOU SPENT</string>
+    <string name="you_can_claim_2_redemption_offers">You can claim 2 redemption offers!</string>
+    <string name="free_burger">Free burger</string>
+    <string name="free_pizza">Free Pizza</string>
+    <string name="_500_points">500 points</string>
+    <string name="more_redemption_offers_5">More redemption offers(5)</string>
+    <string name="see_other_offers_6">See other offers(6)</string>
+    <string name="modern_cafe_coffee_day">Modern Cafe Coffee Day</string>
+    <string name="pizza_restaurant_italian_restaurant">Pizza restaurant,Italian restaurant...</string>
+    <string name="opens_in_10_mins">Opens in 10 mins</string>
+    <string name="_8am_to_11am_12_noon_to_5pm">8AM to 11AM,12 Noon to 5PM</string>
+    <string name="_1st_floor_the_destination_gm_road_chembur_east_mumbai_maharashtra">1st Floor,The Destination,GM Road,Chembur East,Mumbai,Maharashtra</string>
+    <string name="loyalty_statement">Loyalty Statement</string>
+    <string name="communication_pref_and_loyalty_terms">Communication Pref. and Loyalty Terms</string>
+    <string name="more_business_information">More business information</string>
+    <string name="website_hours_attributes">Website,Hours,Attributes..</string>
+    <string name="_14_50">£14.50</string>
+    <string name="_10_77">£10.77</string>
+    <string name="wcback">Welcome Back</string>
+    <string name="or">-or-</string>
+    <string name="signin">Sign In</string>
+    <string name="mobileverify">Mobile Verification</string>
+
+
+    <string name="title_prompt"></string>
+    <string-array name="title_arrays">
+        <item>Mr.</item>
+        <item>Mrs.</item>
+        <item>Ms.</item>
+    </string-array>
+    <string-array name="family">
+        <item>Mother</item>
+        <item>Father</item>
+        <item>Sister</item>
+        <item>Brother</item>
+    </string-array>
+    <string-array name="birth_year">
+        <item>1970</item>
+        <item>1980</item>
+        <item>1990</item>
+        <item>2000</item>
+    </string-array>
+
+    <string-array name="income_arrays">
+        <item>Less than 1 Lakh</item>
+        <item>1 lakh - 2 lakh</item>
+        <item>3 lakh - 4 lakh</item>
+        <item>4 lakh - 5 lakh</item>
+        <item>5 lakh - 6 lakh</item>
+        <item>6 lakh - 7 lakh</item>
+        <item>7 lakh - 8 lakh</item>
+        <item>8 lakh - 9 lakh</item>
+        <item>9 lakh - 10 lakh</item>
+        <item>More than 10 lakhs</item>
+    </string-array>
+    <string name="title_activity_navigation">Navigation</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_draw">DrawActivity</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wohlig.sava">
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Test"
+            android:label="Sava"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SingUpActivity" />
+        <activity android:name=".NavDrawerActivity" />
+        <activity android:name=".qr1"></activity>
+        <activity android:name=".qr4" />
+        <activity android:name=".qr_3" />
+        <activity android:name=".qr21" />
+        <activity android:name=".MobileVerificationActivity" />
+        <activity android:name=".SignUpMobileFragment" />
+        <activity android:name=".PersonalDetailActivity" />
+        <activity android:name=".qr2"></activity>
+        <activity android:name=".secondPage" />
+        <activity android:name=".SavaActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Personal_info" />
+        <activity android:name=".AboutYouActivity" />
+        <activity android:name=".Contacts" />
+        <activity android:name=".Address" />
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+    </application>
+
+</manifest>

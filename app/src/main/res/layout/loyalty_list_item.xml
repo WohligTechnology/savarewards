@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loyalty_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@android:color/white"
+    android:padding="10dp"
+    android:onClick="loyalty">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/loyalty_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/loyalty_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hi"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/loyalty_points"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="5dp"
+                            android:text="500"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <ImageView
+                            android:id="@+id/loyalty_score"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@mipmap/ic_launcher" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/loyalty_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="hi"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="50dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layout_loyalty_stamps1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp1"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp2"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp1"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp3"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp2"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp4"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp3"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp5"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp4"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp6"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp5"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp7"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp6"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp8"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp7"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp9"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp8"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp10"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp9"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp11"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp10"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp12"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp11"
+                                    android:src="@drawable/red"
+                                    android:visibility="invisible" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp13"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp12"
+                                    android:src="@drawable/grey"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp14"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:src="@drawable/grey"
+                                    android:visibility="invisible" />
+
+                                <ImageView
+                                    android:id="@+id/loyalty_stamp15"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_toRightOf="@+id/loyalty_stamp14"
+                                    android:src="@drawable/grey"
+                                    android:visibility="invisible" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="7dp"
+                        android:text="10:30am"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

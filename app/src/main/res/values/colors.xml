@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF0000</color>
+    <color name="colorPrimaryDark">#cb2424</color>
+    <color name="nav_button">#ad1414</color>
+    <color name="nav_button1">#d11a1a</color>
+    <color name="colorAccent">#cb2424</color>
+    <color name="transparent_black_000000">#4D000000</color>
+    <color name="black_000000">#000000</color>
+    <color name="white_FFFFFF">#FFFFFF</color>
+    <color name="transparentBlackTint1">#66a3a3a3</color>
+    <color name="light_grey_f2f2f2">#F2F2F2</color>
+    <color name="grey_e5e5e5">#E5E5E5</color>
+    <color name="dark_grey_98a1a5">#98a1a5</color>
+    <color name="green_4ca64c">#4CA64C</color>
+    <color name="green">#00a232</color>
+    <color name="nav_text">#898787</color>
+    <color name="downarrow">#aeacac</color>
+    <color name="navline">#bdbcbc</color>
+
+
+    <color name="light_black_666666">#666666</color>
+    <color name="gold_ffd700">#FFD700</color>
+    <color name="red_gplus_d34836">#d34836</color>
+    <color name="blue_fb_3b5998">#3b5998</color>
+
+</resources>
+
+
+
+
+
+
+
+
+
+
