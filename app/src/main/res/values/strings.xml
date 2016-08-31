@@ -145,6 +145,18 @@
         <item>9 lakh - 10 lakh</item>
         <item>More than 10 lakhs</item>
     </string-array>
+    <string-array name="countrycode">
+        <item>+44</item>
+        <item>+91</item>
+        <item>84</item>
+    </string-array>
+    <string-array name="age">
+        <item>21 age</item>
+        <item>22 age</item>
+        <item>23 age</item>
+    </string-array>
+
+
     <string name="title_activity_navigation">Navigation</string>
 
     <string name="action_settings">Settings</string>

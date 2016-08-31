@@ -71,7 +71,7 @@
 
             <View
                 android:id="@+id/view_no"
-                android:layout_width="1dp"
+                android:layout_width="2dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40dp"
@@ -115,7 +115,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_margin="12dp"
-                    android:numeric="decimal"
                     android:text="@string/digit" />
             </RelativeLayout>
         </LinearLayout>

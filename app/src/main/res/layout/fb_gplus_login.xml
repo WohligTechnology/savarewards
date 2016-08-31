@@ -28,19 +28,15 @@
             android:id="@+id/rel_fb"
             android:layout_width="120dp"
             android:layout_height="50dp"
-            android:layout_marginRight="30dp">
+            android:layout_marginRight="30dp"
+            android:background="@color/blue_fb_3b5998">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blue_fb_3b5998" />
 
             <ImageView
                 android:id="@+id/imageView17"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
                 android:src="@drawable/fbwhite" />
         </RelativeLayout>
 
@@ -49,18 +45,12 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
-            android:background="@color/red_gplus_d34836" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+            android:background="@color/red_gplus_d34836">
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
                 android:src="@drawable/gpluswhite" />
 
         </RelativeLayout>

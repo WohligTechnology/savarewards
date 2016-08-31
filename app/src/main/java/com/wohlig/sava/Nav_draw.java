@@ -21,6 +21,7 @@ public class Nav_draw extends Fragment {
     ImageView imageView1;
     Button bsignup,blogin;
     RelativeLayout notification;
+    ImageView subcat;
     View view;
     LinearLayout setting,about,help,all_offer,saved_offers,cafe,restaurants,lunch,bars,gas_stations;
     @Override
@@ -37,13 +38,22 @@ public class Nav_draw extends Fragment {
                 startActivity(intent);
             }
         });
+        subcat= (ImageView) view.findViewById(R.id.subcat);
         categories = (RelativeLayout) view.findViewById(R.id.categories1);
         subcategories = (LinearLayout) view.findViewById(R.id.sub_categories);
         categories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "categories", Toast.LENGTH_SHORT).show();
-                subcategories.setVisibility(subcategories.isShown() ? View.GONE : View.VISIBLE);
+                if (subcategories.isShown())
+                {
+                    subcat.setRotation(360);
+                    subcategories.setVisibility(View.GONE );
+                }else{
+                    subcat.setRotation(180);
+                    subcategories.setVisibility(View.VISIBLE );
+
+                }
+//                subcategories.setVisibility(subcategories.isShown() ? View.GONE : View.VISIBLE);
 
             }
         });

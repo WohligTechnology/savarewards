@@ -89,10 +89,8 @@ public class Test extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
-
     }
+
     private void setupViewPager(ViewPager viewPager) {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new One(), "1");
@@ -101,7 +99,5 @@ public class Test extends AppCompatActivity {
         adapter.addFragment(new One(), "4");
         viewPager.setAdapter(adapter);
     }
-
-
 
 }

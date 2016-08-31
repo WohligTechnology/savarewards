@@ -1,10 +1,13 @@
 package com.wohlig.sava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
@@ -15,6 +18,8 @@ public class Contacts extends AppCompatActivity {
     TextView toolbartitle;
     TextView save;
     ImageView back;
+    EditText etphone,etemail;
+    Spinner spphone;
 
 
     @Override
@@ -34,6 +39,9 @@ public class Contacts extends AppCompatActivity {
 //                finish();
 //            }
 //        });
+        etemail= (EditText) findViewById(R.id.etemail);
+        etphone= (EditText) findViewById(R.id.etphone);
+        spphone= (Spinner) findViewById(R.id.spphone);
         back= (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +53,17 @@ public class Contacts extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-            }
+
+                String Phone = String.valueOf(spphone.getSelectedItem())+" "+String.valueOf(etphone.getText()) ;
+                String email = String.valueOf(etemail.getText()) ;
+                Intent i = new Intent();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Phone", Phone); //This is for a String
+                bundle.putString("email", email); //This is for a String
+                i.setClass(getApplicationContext(), PersonalDetailActivity.class);
+                i.putExtras(bundle);
+                startActivity(i);            }
         });
 
     }

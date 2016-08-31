@@ -17,7 +17,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,8 +35,9 @@ public class secondPage extends AppCompatActivity {
     CardView burger,pizza;
     CoordinatorLayout corCoordinatorLayout;
     CardView card_view_some_wrong;
+    ImageView ivwrong;
     LinearLayout linearLayout;
-
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,13 +108,25 @@ public class secondPage extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         pizza= (CardView) findViewById(R.id.card_view_pizza1);
         burger= (CardView) findViewById(R.id.card_view_burger1);
+        scrollView= (ScrollView) findViewById(R.id.scroll);
         linearLayout= (LinearLayout) findViewById(R.id.linear1);
         corCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator);
+        ivwrong= (ImageView) findViewById(R.id.img_arrw_some_wrong);
         card_view_some_wrong = (CardView) findViewById(R.id.card_view_some_wrong);
         card_view_some_wrong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linearLayout.setVisibility(linearLayout.isShown() ? View.GONE : View.VISIBLE);
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                if (linearLayout.isShown())
+                {
+                    ivwrong.setRotation(360);
+                    linearLayout.setVisibility(View.GONE );
+                }else{
+                    ivwrong.setRotation(180);
+                    linearLayout.setVisibility(View.VISIBLE );
+
+                }
+//                linearLayout.setVisibility(linearLayout.isShown() ? View.GONE  : View.VISIBLE);
 
             }
         });

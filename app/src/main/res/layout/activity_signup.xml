@@ -7,8 +7,7 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -156,16 +155,21 @@
                                 android:id="@+id/edt_password"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginRight="70dp"
                                 android:hint="@string/password"
                                 android:inputType="textPassword"
                                 android:singleLine="true"
+
                                 android:textColorLink="@color/colorPrimaryDark" />
 
                             <ImageView
                                 android:id="@+id/eye"
                                 android:layout_width="35dp"
-                                android:layout_height="15dp"
+                                android:layout_height="20dp"
                                 android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="5dp"
+                                android:clickable="true"
                                 android:layout_marginRight="35dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/eye_open" />
@@ -173,10 +177,13 @@
                             <ImageView
                                 android:id="@+id/info"
                                 android:layout_width="35dp"
-                                android:layout_height="15dp"
+                                android:layout_height="20dp"
+                                android:clickable="true"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/information_button" />
+
+
                         </RelativeLayout>
 
 

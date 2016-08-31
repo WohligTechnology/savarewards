@@ -237,6 +237,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
+                                android:inputType="date"
                                 android:text="23/12/1993"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -305,6 +306,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
+                                android:id="@+id/tvemail"
+                                android:inputType="textEmailAddress"
                                 android:text="maheshwohlig@gmail.com"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -333,6 +336,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
+                                android:id="@+id/tvphone"
+                                android:inputType="phone"
                                 android:text="+ 44 9999999999"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -393,6 +398,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
+                                android:id="@+id/tvadd"
                                 android:text="Wohlig Technology \nOpposite Axis Bank \nSion, Mumbai-400 022, India"
                                 android:textSize="16sp" />
                         </LinearLayout>
