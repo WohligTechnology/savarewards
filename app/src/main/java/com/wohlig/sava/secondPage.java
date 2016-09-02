@@ -106,6 +106,9 @@ public class secondPage extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+
+
         pizza= (CardView) findViewById(R.id.card_view_pizza1);
         burger= (CardView) findViewById(R.id.card_view_burger1);
         scrollView= (ScrollView) findViewById(R.id.scroll);
@@ -120,6 +123,7 @@ public class secondPage extends AppCompatActivity {
                 if (linearLayout.isShown())
                 {
                     ivwrong.setRotation(360);
+                    scrollView.scrollTo(0, (int) burger.getY());
                     linearLayout.setVisibility(View.GONE );
                 }else{
                     ivwrong.setRotation(180);
@@ -158,7 +162,11 @@ public class secondPage extends AppCompatActivity {
         adapter.addFragment(new OneFragment(), "Card B");
         adapter.addFragment(new OneFragment(), "Card C");
 
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(adapter);/*
+        View v = getActionBar().getTabAt(0).getCustomView();
+        BadgeView badge = new BadgeView(this, v);
+        badge.setText("1");
+        badge.show();*/
     }
     public void card(View view) {
         Intent intent = new Intent(this, qr2.class);

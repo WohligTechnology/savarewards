@@ -505,6 +505,20 @@
                     app:tabMinWidth="120dp"
                     app:tabMode="scrollable"-->
                 </android.support.design.widget.TabLayout>
+               <!-- <me.amiee.nicetab.NiceTabLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/sliding_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?colorPrimary"
+                    app:ntlDividerPaddingLeft="8dp"
+                    app:ntlDividerPaddingRight="8dp"
+                    app:ntlIndicatorHeight="2dp"
+                    app:ntlOverlayColor="#aa1a237e"
+                    app:ntlTabMode="both"
+                    app:ntlTextSize="20sp"
+                    app:ntlTextStyle="normal"
+                    app:ntlUnderlineHeight="1dp"/>-->
 
             </android.support.design.widget.AppBarLayout>
 

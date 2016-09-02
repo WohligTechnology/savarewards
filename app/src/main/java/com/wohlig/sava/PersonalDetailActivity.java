@@ -42,7 +42,7 @@ public class PersonalDetailActivity extends AppCompatActivity {
     static EditText DateEdit;
     Toolbar toolbar;
     TextView toolbartitle;
-    TextView tvadd,tvemail,tvphone;
+    TextView tvadd,tvemail,tvphone,tvname,tvtitle,tvgender,tvdob;
     ImageView pd_pencil,cd_pencil,add_pencil,ay_pencil;
     RelativeLayout profile_pic;
     ImageView imageView;
@@ -68,6 +68,11 @@ public class PersonalDetailActivity extends AppCompatActivity {
         tvadd= (TextView) findViewById(R.id.tvadd);
         tvemail= (TextView) findViewById(R.id.tvemail);
         tvphone= (TextView) findViewById(R.id.tvphone);
+        tvname= (TextView) findViewById(R.id.tvname);
+        tvdob= (TextView) findViewById(R.id.tvdob);
+        tvtitle= (TextView) findViewById(R.id.tvtitle);
+        tvgender= (TextView) findViewById(R.id.tvgender);
+
 
         if(bundle!=null) {
             String address = bundle.getString("Address");
@@ -82,6 +87,17 @@ public class PersonalDetailActivity extends AppCompatActivity {
         if(bundle!=null) {
             String email = bundle.getString("Phone");
             tvphone.setText(email);
+
+        }
+        if(bundle!=null) {
+            String name = bundle.getString("name");
+            tvname.setText(name);
+            String title = bundle.getString("title");
+            tvtitle.setText(title);
+            String dob = bundle.getString("dob");
+            tvdob.setText(dob);
+            String gender = bundle.getString("gender");
+            tvgender.setText(gender);
 
         }
 

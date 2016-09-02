@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.ViewHolder> {
+public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.ViewHolder> {
 
 
     List<String> data;
@@ -21,7 +21,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.ViewHolder> {
     List<String> type;
     Context mContext;
 
-    public MyAdapter2(List<String> data,List<Integer> imgData,List<String> address,List<String> type,Context mContext){
+    public NearbyAdapter(List<String> data, List<Integer> imgData, List<String> address, List<String> type, Context mContext){
         this.data = data;
         this.imgList = imgData;
         this.address = address;
@@ -30,7 +30,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.ViewHolder> {
     }
 
     @Override
-    public MyAdapter2.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NearbyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         CardView cardView = (CardView) inflater.inflate(R.layout.list_item,null);
         ViewHolder viewHolder = new ViewHolder(cardView,mContext);

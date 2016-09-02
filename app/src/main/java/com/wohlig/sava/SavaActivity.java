@@ -117,7 +117,7 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
 
 
     private void setUpIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.my_selector);
+        tabLayout.getTabAt(0).setIcon(R.drawable.my_store_selector);
         tabLayout.getTabAt(1).setIcon(R.drawable.my_loyalty_selector);
         tabLayout.getTabAt(2).setIcon(R.drawable.my_offers_selector);
         tabLayout.getTabAt(3).setIcon(R.drawable.my_notifications_selector);

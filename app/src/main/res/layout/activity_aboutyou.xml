@@ -25,34 +25,33 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/back"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:id="@+id/back"
-                    android:padding="5dp"
-                    android:src="@drawable/arrow_left5"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    />
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@drawable/arrow_left5" />
 
                 <TextView
                     android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:id="@+id/save"
+                    android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:text="save"
                     android:textSize="18sp" />
@@ -70,172 +69,186 @@
         android:layout_margin="7dp"
         android:background="@color/white_FFFFFF">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="About You"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txt_dietary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="15dp"
-                android:text="Dietary needs"
-                android:textColor="@color/blue_fb_3b5998" />
-
-
-            <EditText
-                android:id="@+id/edt_dietary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_dietary"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp" />
-            <!-- <com.doodle.android.chips.ChipsView
-                 android:id="@+id/chipsView"
-                 android:layout_width="match_parent"
-                 android:layout_height="20dp"
-                 app:cv_max_height="120dp"
-                 app:cv_vertical_spacing="2dp"
-                 app:cv_bg_color="#DDD"
-                 app:cv_bg_color_clicked="#DDD"
-                 app:cv_bg_color_error_clicked="#DDD"
-                 app:cv_color="#00f"
-                 app:cv_color_clicked="#721"
-                 app:cv_color_error_clicked="#f00"
-                 app:cv_text_color="#199"
-                 app:cv_text_color_clicked="#180"
-                 app:cv_text_color_error_clicked="#000"
-                 app:cv_icon_delete="@drawable/ic_close_24dp"
-                 app:cv_dialog_title="This is the title"
-                 app:cv_dialog_et_placeholder="email2"
-                 app:cv_dialog_confirm="confirm2"
-                 app:cv_dialog_cancel="cancel2"/>-->
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/edt_dietary"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="10dp"
-                android:text="Household:"
-                android:textColor="@color/blue_fb_3b5998" />
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="3"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="You"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="26 age"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_household"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <Spinner
-                    style="@style/Widget.AppCompat.Spinner.Underlined"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="1"
-                    android:entries="@array/family" />
-
-                <Spinner
-                    style="@style/Widget.AppCompat.Spinner.Underlined"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="1"
-                    android:entries="@array/age" />
-
-                <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/rounded_remove_button" />
-            </LinearLayout>
+                    android:text="About You"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_dietary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Dietary needs"
+                    android:textColor="@color/blue_fb_3b5998" />
 
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edt_dietary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_dietary"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp" />
+                <!-- <com.doodle.android.chips.ChipsView
+                     android:id="@+id/chipsView"
+                     android:layout_width="match_parent"
+                     android:layout_height="20dp"
+                     app:cv_max_height="120dp"
+                     app:cv_vertical_spacing="2dp"
+                     app:cv_bg_color="#DDD"
+                     app:cv_bg_color_clicked="#DDD"
+                     app:cv_bg_color_error_clicked="#DDD"
+                     app:cv_color="#00f"
+                     app:cv_color_clicked="#721"
+                     app:cv_color_error_clicked="#f00"
+                     app:cv_text_color="#199"
+                     app:cv_text_color_clicked="#180"
+                     app:cv_text_color_error_clicked="#000"
+                     app:cv_icon_delete="@drawable/ic_close_24dp"
+                     app:cv_dialog_title="This is the title"
+                     app:cv_dialog_et_placeholder="email2"
+                     app:cv_dialog_confirm="confirm2"
+                     app:cv_dialog_cancel="cancel2"/>-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Add more"
-                    android:textSize="16sp" />
+                    android:layout_below="@+id/edt_dietary"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Household:"
+                    android:textColor="@color/blue_fb_3b5998" />
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="You"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="26 age"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+               <!-- <LinearLayout
+                    android:id="@+id/ll_household"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                     <Spinner
+                         style="@style/Widget.AppCompat.Spinner.Underlined"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginRight="15dp"
+                         android:layout_weight="1"
+                         android:entries="@array/family" />
+
+                     <Spinner
+                         style="@style/Widget.AppCompat.Spinner.Underlined"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginRight="15dp"
+                         android:layout_weight="1"
+                         android:entries="@array/age" />
+
+                     <ImageView
+                         android:layout_width="wrap_content"
+                         android:layout_height="18dp"
+                         android:id="@+id/remove"
+                         android:layout_marginLeft="5dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="10dp"
+                         android:src="@drawable/rounded_remove_button" />
+                </LinearLayout>-->
+
+                    <LinearLayout android:id="@+id/ll_household"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/addmore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Add more"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:onClick="onClickAdd"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/plus" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/textView30"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/add"
-                    android:src="@drawable/plus" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Annual Income"
+                    android:textColor="@color/blue_fb_3b5998" />
 
-
+                <Spinner
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:entries="@array/income_arrays" />
             </LinearLayout>
-
-
-
-            <TextView
-                android:id="@+id/textView30"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="20dp"
-                android:text="Annual Income"
-                android:textColor="@color/blue_fb_3b5998" />
-
-            <Spinner
-                style="@style/Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp"
-                android:entries="@array/income_arrays" />
-        </LinearLayout>
+        </ScrollView>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

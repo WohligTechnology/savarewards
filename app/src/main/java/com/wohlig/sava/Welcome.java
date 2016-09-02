@@ -13,7 +13,7 @@ import com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator;
 /**
  * Created by Mahesh on 8/tag2/2016.
  */
-public class Test extends AppCompatActivity {
+public class Welcome extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter adapter;
     DotIndicator indicator;

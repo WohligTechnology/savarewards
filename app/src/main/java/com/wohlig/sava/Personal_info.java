@@ -65,12 +65,15 @@ public class Personal_info extends AppCompatActivity {
                 String title = String.valueOf(titlespinner.getSelectedItem());
                 String name = String.valueOf(etname.getText());
                 String dob = String.valueOf(date.getText());
+                String gender = String.valueOf(date.getText());
+
                 Intent i = new Intent();
 
                 Bundle bundle = new Bundle();
                 bundle.putString("title", title); //This is for a String
                 bundle.putString("name", name); //This is for a String
                 bundle.putString("dob", dob); //This is for a String
+                bundle.putString("gender", gender); //This is for a String
                 i.setClass(getApplicationContext(), PersonalDetailActivity.class);
                 i.putExtras(bundle);
                 startActivity(i);
@@ -79,7 +82,7 @@ public class Personal_info extends AppCompatActivity {
 
 
 
-       /* RadioGroup group= (RadioGroup) this.findViewById(R.id.gender);
+        /*RadioGroup group= (RadioGroup) this.findViewById(R.id.gender);
         if (group != null) {
             group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override

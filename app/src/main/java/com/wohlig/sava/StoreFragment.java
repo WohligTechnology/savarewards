@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -48,12 +46,12 @@ public class StoreFragment extends Fragment {
         List<String> address = new ArrayList<>(Arrays.asList(new String[]{"31,Opposite Globus,Hill Road Bandra..","32,Gloucester avenue,Ray Road,Khar..","31,Opposite Globus,MGD Road.","31,Opposite Globus,MGD Road Bandra"}));
         List<String> type = new ArrayList<>(Arrays.asList(new String[]{"Italian Restaurants, Pizza","Malaysian Restaurants","German Restaurants, Austrian Re..","American Restaurants"}));
 
-        MyAdapter myAdapter = new MyAdapter(data,imageDataOne,direction,distance,getActivity());
-        mRecyclerView.setAdapter(myAdapter);
+        FavoritesAdapter favoritesAdapter = new FavoritesAdapter(data,imageDataOne,direction,distance,getActivity());
+        mRecyclerView.setAdapter(favoritesAdapter);
         mRecyclerView.addItemDecoration(new VerticalSpaceItemDecoration(10));
 
-        MyAdapter2 myAdapter2 = new MyAdapter2(data2,imageDataOne,address,type,getActivity());
-        mRecyclerView2.setAdapter(myAdapter2);
+        NearbyAdapter nearbyAdapter = new NearbyAdapter(data2,imageDataOne,address,type,getActivity());
+        mRecyclerView2.setAdapter(nearbyAdapter);
         mRecyclerView2.addItemDecoration(new HorizontalSpaceItemDecoration(2));
 
         return view;

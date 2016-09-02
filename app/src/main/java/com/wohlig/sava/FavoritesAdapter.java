@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
 
     List<String> data;
     List<Integer> imagList;
@@ -20,7 +20,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     List<String> distance;
     Context mContext;
 
-    public MyAdapter(List<String> data,List<Integer> imgList,List<Integer> directn,List<String> distnce,Context mContext){
+    public FavoritesAdapter(List<String> data, List<Integer> imgList, List<Integer> directn, List<String> distnce, Context mContext){
         this.data = data;
         this.imagList =imgList;
         this.direction = directn;

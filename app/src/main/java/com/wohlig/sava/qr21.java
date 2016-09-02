@@ -92,7 +92,7 @@ public class qr21 extends AppCompatActivity implements swipeListener{
 
         if (!flag) {
 
-                Intent intent = new Intent(this, qr4.class);
+                Intent intent = new Intent(this, ScanningCodeActivity.class);
                 startActivity(intent);
                 flag = true;
 

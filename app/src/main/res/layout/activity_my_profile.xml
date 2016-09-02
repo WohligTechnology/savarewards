@@ -152,6 +152,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 android:text="Mr."
+                                android:id="@+id/tvtitle"
                                 android:textSize="16sp" />
                         </LinearLayout>
 
@@ -179,6 +180,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
+                                android:id="@+id/tvname"
                                 android:text="Mahesh Maurya"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -209,6 +211,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 android:text="Male"
+                                android:id="@+id/tvgender"
                                 android:textSize="16sp" />
                         </LinearLayout>
 
@@ -239,6 +242,7 @@
                                 android:layout_marginTop="10dp"
                                 android:inputType="date"
                                 android:text="23/12/1993"
+                                android:id="@+id/tvdob"
                                 android:textSize="16sp" />
                         </LinearLayout>
 

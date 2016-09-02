@@ -15,7 +15,7 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 /**
  * Created by adiam on 6/17/2016.
  */
-public class qr1 extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class ScanningCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
 
@@ -27,7 +27,7 @@ public class qr1 extends AppCompatActivity implements ZXingScannerView.ResultHan
     }
 
     public void pointsPage(View view){
-        Intent intent = new Intent(this,qr2.class);
+        Intent intent = new Intent(this,qr_3.class);
         startActivity(intent);
 
     }
@@ -76,7 +76,7 @@ public class qr1 extends AppCompatActivity implements ZXingScannerView.ResultHan
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        Intent intent = new Intent(this,qr2.class);
+        Intent intent = new Intent(this,qr_3.class);
         startActivity(intent);
         super.onActivityResult(requestCode, resultCode, data);
 
