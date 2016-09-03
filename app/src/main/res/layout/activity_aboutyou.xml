@@ -51,6 +51,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:onClick=" "
                     android:layout_marginRight="10dp"
                     android:padding="5dp"
                     android:text="save"
@@ -229,6 +231,13 @@
 
 
                 </LinearLayout>
+
+              <!--  <Button
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:text="display"
+                    android:id="@+id/display"/>-->
 
 
                 <TextView

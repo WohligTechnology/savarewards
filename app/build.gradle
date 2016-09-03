@@ -49,6 +49,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-gcm:9.4.0'
     compile 'com.hbb20:ccp:1.5.1'
     compile 'me.amiee:nicetab:1.0.0'
+    compile 'me.dm7.barcodescanner:zxing:1.9'
+
 
 
 }

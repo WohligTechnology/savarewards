@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by adiam on 7/29/2016.
@@ -26,7 +27,7 @@ public class AboutYouActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView toolbartitle;
     ImageView mButton;
-    Spinner person ,perosn_age;
+    Button display;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +42,9 @@ public class AboutYouActivity extends AppCompatActivity {
         mButton = (ImageView) findViewById(R.id.add);
         add(this,mButton);
 
-      /*  mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClickAdd(view);
+     /*   display= (Button) findViewById(R.id.display);
+        display(this,display);*/
 
-            }
-        });*/
-
-       /* mLayout = (LinearLayout) findViewById(R.id.lladd);
-        mEditText = (EditText) findViewById(R.id.editText);
-        mButton = (ImageView) findViewById(R.id.add);
-        mButton.setOnClickListener(onClick());
-        TextView textView = new TextView(this);
-        textView.setText("New text");*/
 
     }
 
@@ -71,17 +61,19 @@ public class AboutYouActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 subLayoutFields.removeView((LinearLayout) (v.getParent().getParent()));
+
             }
         });
 
     }
-    public static void display(final Activity activity, Button btn)
+    public static void save(final Activity activity, Button btn)
     {
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 LinearLayout scrollViewlinerLayout = (LinearLayout) activity.findViewById(R.id.ll_household);
+                HashMap<String,String> msg1=new HashMap<String, String>();
                 java.util.ArrayList<String> msg = new ArrayList<String>();
                 for (int i = 0; i < scrollViewlinerLayout.getChildCount(); i++)
                 {
@@ -89,13 +81,12 @@ public class AboutYouActivity extends AppCompatActivity {
                     Spinner person = (Spinner) innerLayout.findViewById(R.id.spperson);
                     Spinner person_age = (Spinner) innerLayout.findViewById(R.id.spperson_age);
                     msg.add((String) person.getSelectedItem());
+                    msg1.put((String) person.getSelectedItem(),(String) person_age.getSelectedItem());
 
-
-                   /* EditText edit = (EditText) innerLayout.findViewById(R.id.editDescricao);
-                    msg.add(edit.getText().toString());*/
                 }
-                Toast t = Toast.makeText(activity.getApplicationContext(), msg.toString(), Toast.LENGTH_SHORT);
+                Toast t = Toast.makeText(activity.getApplicationContext(), msg1.toString(), Toast.LENGTH_SHORT);
                 t.show();
+
             }
         });
     }
@@ -121,21 +112,5 @@ public class AboutYouActivity extends AppCompatActivity {
             }
         });
     }
-/*    private View.OnClickListener onClick() {
-        return new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                mLayout.addView(createNewTextView(mEditText.getText().toString()));
-            }
-        };
-    }
-
-    private TextView createNewTextView(String text) {
-        final RelativeLayout.LayoutParams lparams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-        final TextView textView = new TextView(this);
-        textView.setLayoutParams(lparams);
-        textView.setText("New text: " + text);
-        return textView;
-    }*/
 }
