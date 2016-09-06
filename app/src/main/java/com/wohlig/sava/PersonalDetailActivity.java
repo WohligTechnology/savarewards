@@ -1,6 +1,5 @@
 package com.wohlig.sava;
 
-import android.*;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -75,7 +74,7 @@ public class PersonalDetailActivity extends AppCompatActivity {
 
 
         if(bundle!=null) {
-            String address = bundle.getString("Address");
+            String address = bundle.getString("Location");
             tvadd.setText(address);
 
         }
@@ -165,7 +164,7 @@ public class PersonalDetailActivity extends AppCompatActivity {
         add_pencil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Address.class);
+                Intent intent = new Intent(getApplicationContext(), Location.class);
                 startActivity(intent);
 
             }

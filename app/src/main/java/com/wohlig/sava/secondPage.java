@@ -169,13 +169,13 @@ public class secondPage extends AppCompatActivity {
         badge.show();*/
     }
     public void card(View view) {
-        Intent intent = new Intent(this, qr2.class);
+        Intent intent = new Intent(this, ConfirmRedemption.class);
         startActivity(intent);
 
     }
 
     public void points(View view) {
-        Intent intent = new Intent(this, qr21.class);
+        Intent intent = new Intent(this, ConfirmRedemption1.class);
         startActivity(intent);
 
     }

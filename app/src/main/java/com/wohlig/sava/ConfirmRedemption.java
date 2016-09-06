@@ -15,12 +15,12 @@ import android.widget.TextView;
 /**
  * Created by adiam on 6/17/2016.
  */
-public class qr21 extends AppCompatActivity implements swipeListener{
+public class ConfirmRedemption extends AppCompatActivity implements swipeListener{
 
     public static int MIN_WIDTH = 100;
 
-    private ImageView imageView1;
-    private ImageView imageView2;
+    private ImageView ivswiperight;
+    private ImageView ivswipeleft;
     private ImageView imageView3;
     private ImageView imageView4;
     private TextView textView;
@@ -35,9 +35,9 @@ public class qr21 extends AppCompatActivity implements swipeListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.qr_2);
-        imageView1 = (ImageView) findViewById(R.id.buttonView);
-        imageView2 = (ImageView) findViewById(R.id.buttonView2);
+        setContentView(R.layout.confirmredemption);
+        ivswiperight = (ImageView) findViewById(R.id.ivswiperight);
+        ivswipeleft = (ImageView) findViewById(R.id.ivswipeleft);
         imageView3 = (ImageView) findViewById(R.id.img_greenarrow);
         imageView4 = (ImageView) findViewById(R.id.img_redarrow);
         textView = (TextView) findViewById(R.id.slide);
@@ -45,8 +45,8 @@ public class qr21 extends AppCompatActivity implements swipeListener{
         OnLeftSwipeListener onLeftSwipeListener = new OnLeftSwipeListener(this, this);
         OnRightSwipeListener onRightSwipeListener = new OnRightSwipeListener(this);
 
-        imageView1.setOnTouchListener(onRightSwipeListener);
-        imageView2.setOnTouchListener(onLeftSwipeListener);
+        ivswiperight.setOnTouchListener(onRightSwipeListener);
+        ivswipeleft.setOnTouchListener(onLeftSwipeListener);
 
         MIN_WIDTH = (int) getResources().getDimension(R.dimen._100dp);
 
@@ -69,7 +69,7 @@ public class qr21 extends AppCompatActivity implements swipeListener{
         imageView4.setVisibility(View.GONE);
         textView.setVisibility(View.GONE);
         oppositeView.setVisibility(View.GONE);
-    }
+     }
 
     @Override
     public void onSwipeRelease(View view, MotionEvent motionEvent) {
@@ -96,7 +96,6 @@ public class qr21 extends AppCompatActivity implements swipeListener{
                 startActivity(intent);
                 flag = true;
 
-
         }
     }
 
@@ -109,16 +108,15 @@ public class qr21 extends AppCompatActivity implements swipeListener{
 
     private View getOppositeView(View view){
         View oppositeView;
-        if (view.getId() == imageView1.getId()) {
-            oppositeView = imageView2;
+        if (view.getId() == ivswiperight.getId()) {
+            oppositeView = ivswipeleft;
         } else {
-            oppositeView = imageView1;
+            oppositeView = ivswiperight;
         }
         return oppositeView;
     }
 
 }
-
 
 
 

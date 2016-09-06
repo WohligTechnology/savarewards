@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by adiam on 6/17/2016.
  */
-public class qr_3 extends AppCompatActivity {
+public class CongratesForstamp extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -30,7 +30,7 @@ public class qr_3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.qr_3);
+        setContentView(R.layout.congratesforstamp);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         setupViewPager(viewPager);
@@ -41,7 +41,7 @@ public class qr_3 extends AppCompatActivity {
 
     }
     public void qr3Page(View view){
-        Intent intent = new Intent(this,qr2.class);
+        Intent intent = new Intent(this,ConfirmRedemption.class);
         startActivity(intent);
     }
 

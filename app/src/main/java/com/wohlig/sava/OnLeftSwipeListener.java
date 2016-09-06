@@ -3,7 +3,6 @@ package com.wohlig.sava;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 /**
@@ -27,12 +26,12 @@ public class OnLeftSwipeListener implements View.OnTouchListener {
                 layoutParams.leftMargin = X;
                 int width = layoutParams.width + X;
                 layoutParams.width = width;
-                if (X > (qr2.screenWidth - qr2.MIN_WIDTH)) {
-                    layoutParams.leftMargin = qr2.screenWidth - qr2.MIN_WIDTH;
-                    layoutParams.width = qr2.MIN_WIDTH;
+                if (X > (ConfirmRedemption.screenWidth - ConfirmRedemption.MIN_WIDTH)) {
+                    layoutParams.leftMargin = ConfirmRedemption.screenWidth - ConfirmRedemption.MIN_WIDTH;
+                    layoutParams.width = ConfirmRedemption.MIN_WIDTH;
                 }
-                if(layoutParams.width > qr2.ninetyPercentScreenWidth){
-                    layoutParams.width = qr2.screenWidth;
+                if(layoutParams.width > ConfirmRedemption.ninetyPercentScreenWidth){
+                    layoutParams.width = ConfirmRedemption.screenWidth;
                 }
                 view.setLayoutParams(layoutParams);
                 if(layoutParams.leftMargin < 50){

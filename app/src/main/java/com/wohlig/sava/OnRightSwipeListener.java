@@ -25,13 +25,13 @@ public class OnRightSwipeListener implements View.OnTouchListener {
                 if (width >= 100) {
                     layoutParams.width = width;
                 } else {
-                    layoutParams.width = qr2.MIN_WIDTH;
+                    layoutParams.width = ConfirmRedemption.MIN_WIDTH;
                 }
-                if(layoutParams.width > qr2.ninetyPercentScreenWidth){
-                    layoutParams.width = qr2.screenWidth;
+                if(layoutParams.width > ConfirmRedemption.ninetyPercentScreenWidth){
+                    layoutParams.width = ConfirmRedemption.screenWidth;
                 }
                 view.setLayoutParams(layoutParams);
-                if(layoutParams.width == qr2.screenWidth){
+                if(layoutParams.width == ConfirmRedemption.screenWidth){
                     swipeListener.launchNextActivity();
                 }
                 swipeListener.onSwipe(view, layoutParams.width);

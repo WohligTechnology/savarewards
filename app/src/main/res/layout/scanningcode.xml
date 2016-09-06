@@ -62,22 +62,21 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            >
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
+            android:id="@+id/tvclickhere"
+            android:gravity="center"
             android:text="@string/plsscan"
-            android:textColor="@android:color/white" />
-        </RelativeLayout>
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black" />
 
         <FrameLayout
             android:id="@+id/cam_scanner"
+            android:layout_below="@+id/tvclickhere"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -92,9 +91,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
+                android:id="@+id/etscancode"
                 android:hint="@string/entermanually"
-                android:textColorHint="@android:color/white"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
 
         </RelativeLayout>
 

@@ -3,38 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/rel_confirm"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginLeft="10dp"
-            android:onClick="qr2Page"
-            android:src="@drawable/back_arrow" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:background="?attr/colorPrimary"
+            android:popupTheme="@style/AppTheme.PopupOverlay">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/confirm_redemption"
-            android:textColor="@color/white_FFFFFF"
-            android:textSize="20sp" />
+            <RelativeLayout
+                android:id="@+id/rel_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:onClick="qr2Page"
+                    android:src="@drawable/back_arrow" />
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:text="@string/confirm_redemption"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
-    </LinearLayout>
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
 
     <RelativeLayout
         android:id="@+id/rel_ccd"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_below="@+id/rel_confirm">
+        android:layout_below="@+id/app_bar1">
 
         <ImageView
             android:layout_width="match_parent"
@@ -67,8 +89,7 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="18dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="90dp"
             android:text="@string/cafe_coffee_day"
             android:textColor="@color/white_FFFFFF"
@@ -170,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/_650_points"
                             android:textColor="@color/black_000000"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView14"
@@ -200,7 +221,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/cafe_coffe_day_points"
                             android:textColor="@color/black_000000"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView16"
@@ -231,10 +252,10 @@
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:animateLayoutChanges="true"
-        tools:context="com.wohlig.sava.qr2">
+        tools:context=".ConfirmRedemption">
 
         <ImageView
-            android:id="@+id/buttonView"
+            android:id="@+id/ivswiperight"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_alignParentLeft="true"
@@ -245,7 +266,7 @@
             android:src="@drawable/shapeconfirm" />
 
         <ImageView
-            android:id="@+id/buttonView2"
+            android:id="@+id/ivswipeleft"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_alignParentRight="true"
@@ -259,16 +280,16 @@
             android:id="@+id/img_greenarrow"
             android:layout_width="110dp"
             android:layout_height="20dp"
-            android:layout_alignTop="@+id/buttonView"
-            android:layout_toEndOf="@+id/buttonView"
+            android:layout_alignTop="@+id/ivswiperight"
+            android:layout_toEndOf="@+id/ivswiperight"
             android:src="@drawable/greenarrow" />
 
         <ImageView
             android:id="@+id/img_redarrow"
             android:layout_width="110dp"
             android:layout_height="20dp"
-            android:layout_alignBottom="@+id/buttonView2"
-            android:layout_toStartOf="@+id/buttonView2"
+            android:layout_alignBottom="@+id/ivswipeleft"
+            android:layout_toStartOf="@+id/ivswipeleft"
             android:src="@drawable/redarrow" />
 
         <TextView

@@ -5,9 +5,13 @@
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
     <uses-permission android:name="android.permission" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -29,20 +33,20 @@
         <activity android:name=".SingUpActivity" />
         <activity android:name=".NavDrawerActivity" />
         <activity android:name=".ScanningCodeActivity"></activity>
-        <activity android:name=".qr4" />
-        <activity android:name=".qr_3" />
-        <activity android:name=".qr21" />
+        <activity android:name=".CongratesForpoints" />
+        <activity android:name=".CongratesForstamp" />
+        <activity android:name=".ConfirmRedemption1" />
         <activity android:name=".MobileVerificationActivity" />
         <activity android:name=".SignUpMobileFragment" />
         <activity android:name=".PersonalDetailActivity" />
-        <activity android:name=".qr2"></activity>
+        <activity android:name=".ConfirmRedemption"></activity>
         <activity android:name=".secondPage" />
         <activity android:name=".SavaActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Personal_info" />
         <activity android:name=".AboutYouActivity" />
         <activity android:name=".Contacts" />
-        <activity android:name=".Address" />
+        <activity android:name=".Location" />
 
 
         <meta-data

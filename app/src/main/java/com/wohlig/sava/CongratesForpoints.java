@@ -8,16 +8,16 @@ import android.view.View;
 /**
  * Created by adiam on 6/20/2016.
  */
-public class qr4 extends AppCompatActivity {
+public class CongratesForpoints extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.qr_4);
+        setContentView(R.layout.congratesforpoints);
 
     }
     public void qr4Page(View view){
-        Intent intent = new Intent(this,qr2.class);
+        Intent intent = new Intent(this,ConfirmRedemption.class);
         startActivity(intent);
     }
 

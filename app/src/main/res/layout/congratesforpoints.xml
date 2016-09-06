@@ -445,7 +445,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/free_beer_or_house_wine"
                             android:textColor="#4C4C4C"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/Carte_menu"
@@ -510,7 +510,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/_33_off_on_your_first_visit"
                             android:textColor="#4C4C4C"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/meal_from_menu"

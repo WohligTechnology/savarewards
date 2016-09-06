@@ -86,7 +86,7 @@ public class AboutYouActivity extends AppCompatActivity {
                 }
                 Toast t = Toast.makeText(activity.getApplicationContext(), msg1.toString(), Toast.LENGTH_SHORT);
                 t.show();
-
+ 
             }
         });
     }
