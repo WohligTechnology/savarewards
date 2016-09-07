@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,7 +27,7 @@ public class SignUpMobileFragment extends AppCompatActivity {
     int mobile;
     EditText etotp;
     private static final String FORMAT = "%01d:%02d";
-
+    Button bresendotp,bcallme;
     int seconds , minutes;
 
     @Override
@@ -39,6 +42,9 @@ public class SignUpMobileFragment extends AppCompatActivity {
             mob.setText(phone);
 
         }
+        bresendotp= (Button) findViewById(R.id.bresendotp);
+        bcallme= (Button) findViewById(R.id.bcallme);
+
         left = (ImageView) findViewById(R.id.img_left_arrow);
         left.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +68,30 @@ public class SignUpMobileFragment extends AppCompatActivity {
             }
         });
         etotp= (EditText) findViewById(R.id.edt_otp);
+        etotp.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_DONE) {
+                    if(etotp.getText().equals("123456"))
+                    {
+                        Intent intent= new Intent(getApplicationContext(), SavaActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                return false;
+            }
+        });
+        /*etotp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("hello", "onClick: "+etotp.getText());
+                if(etotp.getText().equals("123456"))
+                {
+                    Intent i = new Intent(getApplicationContext(), SavaActivity.class);
+                    startActivity(i);
+                }
+            }
+        });*/
         digit = (TextView) findViewById(R.id.txt_digit);
         new CountDownTimer(300000, 1000) {
 
@@ -72,11 +102,13 @@ public class SignUpMobileFragment extends AppCompatActivity {
                         TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
                                 TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
 
+
                 //here you can have your logic to set text to edittext
             }
 
             public void onFinish() {
-
+                bcallme.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                bresendotp.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                 digit.setText("done!");
             }
 

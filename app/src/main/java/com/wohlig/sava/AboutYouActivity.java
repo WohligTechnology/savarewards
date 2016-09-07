@@ -20,7 +20,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
+/**\
  * Created by adiam on 7/29/2016.
  */
 public class AboutYouActivity extends AppCompatActivity {

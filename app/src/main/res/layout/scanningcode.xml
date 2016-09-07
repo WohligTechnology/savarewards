@@ -70,6 +70,7 @@
             android:layout_alignParentTop="true"
             android:id="@+id/tvclickhere"
             android:gravity="center"
+            android:onClick="QrScanner"
             android:text="@string/plsscan"
             android:background="@android:color/transparent"
             android:textColor="@android:color/black" />
@@ -106,8 +107,11 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="35dp"
             android:layout_marginRight="20dp"
+            android:clickable="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/sentbutton" />
+            android:src="@drawable/sentbutton"
+            android:onClick="pointsPage"
+            />
         <!--
                 android:onClick="pointsPage"
         -->

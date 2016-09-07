@@ -1,12 +1,19 @@
 package com.wohlig.sava;
 
+import android.*;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import com.google.zxing.Result;
@@ -18,12 +25,34 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
  */
 public class ScanningCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
-    /*private ZXingScannerView mScannerView;
+    private ZXingScannerView mScannerView;
+    ImageView flash;
+    boolean flash1=false;
+    EditText etscancode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mScannerView = new ZXingScannerView(this);
         setContentView(R.layout.scanningcode);
+        ViewGroup contentFrame = (ViewGroup) findViewById(R.id.cam_scanner);
+        contentFrame.addView(mScannerView);
+        etscancode= (EditText) findViewById(R.id.etscancode);
+        flash = (ImageView) findViewById(R.id.flash);
+        flash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!flash1) {
+                    mScannerView.setFlash(true);
+                    flash1=true;
+                }
+                else
+                {
+                    mScannerView.setFlash(false);
+                    flash1=false;
+                }
+            }
+        });
 
     }
 
@@ -64,11 +93,27 @@ public class ScanningCodeActivity extends AppCompatActivity implements ZXingScan
         builder.setMessage(result.getText());
         AlertDialog alert1 = builder.create();
         alert1.show();
-
+        Log.v("hello", result.getText()); // Prints scan results
+        Log.v("hello", result.getBarcodeFormat().toString());
+        etscancode.setText(result.getText());
 
         mScannerView.resumeCameraPreview(this);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mScannerView.setResultHandler(this);
+        if(checkPermissionForCamera()) {// Register ourselves as a handler for scan results.
+            mScannerView.startCamera();
+        }// Start camera on resume
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mScannerView.stopCamera();           // Stop camera on pause
+    }
     @Override
     public void startActivityForResult(Intent intent, int requestCode) {
         super.startActivityForResult(intent, requestCode);
@@ -81,8 +126,16 @@ public class ScanningCodeActivity extends AppCompatActivity implements ZXingScan
         startActivity(intent);
         super.onActivityResult(requestCode, resultCode, data);
 
-    }*/
-    private ZXingScannerView mScannerView;
+    }
+    public boolean checkPermissionForCamera(){
+        int result = ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA);
+        if (result == PackageManager.PERMISSION_GRANTED){
+            return true;
+        } else {
+            ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.CAMERA},1);
+            return false;
+        }}
+   /* private ZXingScannerView mScannerView;
     ImageView flash;
     boolean flash1=false;
     EditText etscancode;
@@ -94,6 +147,7 @@ public class ScanningCodeActivity extends AppCompatActivity implements ZXingScan
         setContentView(R.layout.scanningcode);
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.cam_scanner);
         contentFrame.addView(mScannerView);
+
 
         flash = (ImageView) findViewById(R.id.flash);
         flash.setOnClickListener(new View.OnClickListener() {
@@ -132,8 +186,9 @@ public class ScanningCodeActivity extends AppCompatActivity implements ZXingScan
         // Do something with the result here
         Log.v("hello", rawResult.getText()); // Prints scan results
         Log.v("hello", rawResult.getBarcodeFormat().toString());
+        Toast.makeText(ScanningCodeActivity.this, rawResult.getBarcodeFormat().toString()+rawResult.getText(), Toast.LENGTH_SHORT).show();
         // Prints the scan format (qrcode, pdf417 etc.)
         // If you would like to resume scanning, call this method below:
         mScannerView.resumeCameraPreview(this);
-    }
+    }*/
 }

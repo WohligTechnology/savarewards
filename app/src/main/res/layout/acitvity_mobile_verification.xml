@@ -107,7 +107,10 @@
                     android:id="@+id/edt_otp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enterotp" />
+                    android:hint="@string/enterotp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"/>
 
                 <TextView
                     android:id="@+id/txt_digit"
@@ -137,7 +140,7 @@
             android:layout_margin="30dp">
 
             <Button
-                android:id="@+id/bttn_resend_otp"
+                android:id="@+id/bresendotp"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="40dp"
@@ -151,6 +154,7 @@
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="40dp"
+                android:id="@+id/bcallme"
                 android:background="@color/dark_grey_98a1a5"
                 android:text="@string/callme"
                 android:textAllCaps="false"
