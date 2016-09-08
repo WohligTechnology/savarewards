@@ -19,7 +19,7 @@ import com.squareup.picasso.Transformation;
  * Created by Mahesh on 8/12/2016.
  */
 public class Header extends Fragment
-        implements Transformation {
+       /* implements Transformation*/ {
     View view;
     ImageView imageView;
     RenderScript rs;
@@ -27,18 +27,18 @@ public class Header extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.nav_header_main, container, false);
-        imageView = (ImageView) view.findViewById(R.id.img_blur);
+            view = inflater.inflate(R.layout.nav_header_main, container, false);
+        /*imageView = (ImageView) view.findViewById(R.id.img_blur);
 
         Picasso
                 .with(getActivity())
                 .load(R.drawable.offer1)
                 .transform(this)
-                .into(imageView);
+                .into(imageView);*/
         return view;
     }
 
-    @Override
+   /* @Override
     public Bitmap transform(Bitmap source) {
         Bitmap blurredBitmap = source.copy(Bitmap.Config.ARGB_8888, true);
 
@@ -66,5 +66,5 @@ public class Header extends Fragment
     @Override
     public String key() {
         return "blur";
-    }
+    }*/
 }

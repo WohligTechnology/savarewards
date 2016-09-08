@@ -161,6 +161,8 @@
                 android:textColor="@color/white_FFFFFF" />
         </LinearLayout>
 
+
+
         <Button
             android:id="@+id/next"
             android:layout_width="80dp"

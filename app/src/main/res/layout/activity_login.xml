@@ -83,7 +83,7 @@
                     android:layout_margin="5dp">
 
                     <EditText
-                        android:id="@+id/edt_password"
+                        android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
@@ -92,9 +92,9 @@
                         android:textColorLink="@color/colorPrimaryDark" />
 
                     <ImageView
-                        android:id="@+id/eye"
+                        android:id="@+id/eye1"
                         android:layout_width="45dp"
-                        android:layout_height="15dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="45dp"
                         android:layout_marginTop="10dp"
@@ -102,9 +102,9 @@
                         android:layout_alignParentRight="true" />
 
                     <ImageView
-                        android:id="@+id/info"
+                        android:id="@+id/info1"
                         android:layout_width="45dp"
-                        android:layout_height="15dp"
+                        android:layout_height="18dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/information_button"

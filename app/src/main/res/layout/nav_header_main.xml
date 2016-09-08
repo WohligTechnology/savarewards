@@ -6,13 +6,17 @@
     android:layout_height="@dimen/nav_header_height"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+
+
     <ImageView
         android:id="@+id/img_blur"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"
         android:scaleType="fitXY"
-        android:src="@drawable/offer3" />
+        android:src="@drawable/offer3"
+        android:alpha="0.5"
+        />
 
     <ImageView
         android:id="@+id/img_blur1"
@@ -28,7 +32,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:weightSum="4">
 
         <com.github.siyamed.shapeimageview.CircularImageView
             android:id="@+id/imageView"
@@ -36,13 +41,15 @@
             android:layout_height="50dp"
             android:src="@drawable/mic"
             app:siBorderColor="@color/black_000000"
-            app:siBorderWidth="0.1sp" />
+            app:siBorderWidth="0.1sp"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_gravity="center"
             >
 
@@ -73,6 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:id="@+id/logout"
         android:layout_alignParentLeft="true"
         >
         <ImageView

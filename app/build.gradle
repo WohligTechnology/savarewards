@@ -6,11 +6,11 @@ android {
 
     defaultConfig {
         applicationId "com.wohlig.sava"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        renderscriptTargetApi 18
+        renderscriptTargetApi 8
         renderscriptSupportModeEnabled true
         multiDexEnabled true
 
@@ -51,7 +51,10 @@ dependencies {
     compile 'me.amiee:nicetab:1.0.0'
     compile 'me.dm7.barcodescanner:zxing:1.9'
     compile "com.splitwise:tokenautocomplete:2.0.7@aar"
-
+    compile 'jp.wasabeef:blurry:2.0.3'
+    compile 'jp.wasabeef:picasso-transformations:2.1.0'
+    // If you want to use the GPU Filters
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 
 
 }

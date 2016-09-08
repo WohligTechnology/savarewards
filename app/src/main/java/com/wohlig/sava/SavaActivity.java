@@ -19,6 +19,7 @@ import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.squareup.picasso.Transformation;
 
@@ -43,6 +44,8 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
     ImageView imageView;
     ImageView expandableImageViewChild;
     ImageView expandableImageViewParent;
+    LinearLayout subcategories,logout,btm_button;
+
     int value=0;
 
     @Override
@@ -52,6 +55,7 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         mTitle = mDrawerTitle = getTitle();
         Intent i= getIntent();
         int k=i.getIntExtra("value",0);
+        int login=i.getIntExtra("login",0);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         setUpViewPager(viewPager);
@@ -102,6 +106,18 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        logout= (LinearLayout) navigationView.findViewById(R.id.logout);
+        btm_button= (LinearLayout) navigationView.findViewById(R.id.btm_button);
+        if(login==1) {
+            logout.setVisibility(View.GONE);
+            btm_button.setVisibility(View.VISIBLE);
+        }else
+        {
+            logout.setVisibility(View.VISIBLE);
+            btm_button.setVisibility(View.GONE);
+        }
+
+
 
 
       /*  ImageView imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_blur);

@@ -2,28 +2,48 @@ package com.wohlig.sava;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+
+import android.support.v8.renderscript.Allocation;
+import android.support.v8.renderscript.Element;
+import android.support.v8.renderscript.RenderScript;
+import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
+
+import jp.wasabeef.blurry.Blurry;
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+
 /**
  * Created by Mahesh on 8/11/2016.
  */
 public class Nav_draw extends Fragment {
     RelativeLayout categories,header;
-    LinearLayout subcategories;
-    ImageView imageView1;
+    LinearLayout subcategories,logout,btm_button;
+    ImageView pencil,imgblur;
     Button bsignup,blogin;
     RelativeLayout notification;
     ImageView subcat;
     View view;
     LinearLayout setting,about,help,all_offer,saved_offers,cafe,restaurants,lunch,bars,gas_stations;
+    private static final float BLUR_RADIUS = 25f;
+    private static final float BITMAP_SCALE = 0.4f;
+    RenderScript rs;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -144,14 +164,31 @@ public class Nav_draw extends Fragment {
             }
         });
         header= (RelativeLayout) view.findViewById(R.id.header);
-        imageView1 = (ImageView) header.findViewById(R.id.pencil);
-        imageView1.setOnClickListener(new View.OnClickListener() {
+        pencil = (ImageView) header.findViewById(R.id.pencil);
+        pencil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PersonalDetailActivity.class);
                 startActivity(intent);
             }
         });
+        imgblur= (ImageView) header.findViewById(R.id.img_blur);
+        Bitmap blurredBitmap = null;
+
+        imgblur.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
+
+        logout= (LinearLayout) header.findViewById(R.id.logout);
+        btm_button= (LinearLayout) view.findViewById(R.id.btm_button);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout.setVisibility(View.GONE);
+                btm_button.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+
         bsignup = (Button) view.findViewById(R.id.bsignup);
         bsignup.setOnClickListener(new View.OnClickListener() {
             @Override
