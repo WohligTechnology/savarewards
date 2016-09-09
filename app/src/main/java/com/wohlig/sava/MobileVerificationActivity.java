@@ -38,7 +38,9 @@ public class MobileVerificationActivity extends AppCompatActivity {
             }
         });
 
+/*
         code= (Spinner) findViewById(R.id.spcode);
+*/
         code2= (CountryCodePicker) findViewById(R.id.ccp);
       /*  code.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +60,9 @@ public class MobileVerificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mob= String.valueOf(mob_ph.getText());
-                code1= String.valueOf(code.getSelectedItem());
+                code1= String.valueOf(code2.getFullNumberWithPlus());
+
+
                 code2.getSelectedCountryCodeAsInt();
 
                 String phone=code1+" "+mob;

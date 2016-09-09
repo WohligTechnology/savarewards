@@ -83,7 +83,7 @@
                 android:layout_height="25dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="7dp"
+                android:layout_marginRight="3dp"
                 android:clickable="true"
                 android:src="@drawable/greyedit" />
         </RelativeLayout>

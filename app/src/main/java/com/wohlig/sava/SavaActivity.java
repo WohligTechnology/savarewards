@@ -35,16 +35,10 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
 
     TabLayout tabLayout;
     ViewPager viewPager;
-    private String mtitle;
     Toolbar toolbar;
-    private String[] mNavigationDrawerItemTitles;
     CharSequence mDrawerTitle;
     CharSequence mTitle;
-    HashMap<String, List<String>> listDataChild;
-    ImageView imageView;
-    ImageView expandableImageViewChild;
-    ImageView expandableImageViewParent;
-    LinearLayout subcategories,logout,btm_button;
+    LinearLayout logout,btm_button;
 
     int value=0;
 

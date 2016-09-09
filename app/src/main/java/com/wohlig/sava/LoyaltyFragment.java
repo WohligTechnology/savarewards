@@ -1,13 +1,10 @@
 package com.wohlig.sava;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -65,12 +62,12 @@ public class LoyaltyFragment extends Fragment {
         List<Integer> loyaltyStamps14 = new ArrayList<>(Arrays.asList(new Integer[]{R.drawable.red,}));
         List<Integer> loyaltyStamps15 = new ArrayList<>(Arrays.asList(new Integer[]{R.drawable.red,}));
 
-        MyLoyaltyAdapter myLoyaltyAdapter = new MyLoyaltyAdapter(loyaltyIcon,loyaltyText1,loyaltyText2,
+        LoyaltyAdapter loyaltyAdapter = new LoyaltyAdapter(loyaltyIcon,loyaltyText1,loyaltyText2,
                 loyaltyPointsText,loyaltyPointsIcon,dateTime,loyaltyStamps1,loyaltyStamps2,
                 loyaltyStamps3,loyaltyStamps4,loyaltyStamps5,loyaltyStamps6,loyaltyStamps7,
                 loyaltyStamps8,loyaltyStamps9,loyaltyStamps10,loyaltyStamps11,
                 loyaltyStamps12,loyaltyStamps13,loyaltyStamps14,loyaltyStamps15,getActivity());
-        recyclerView.setAdapter(myLoyaltyAdapter);
+        recyclerView.setAdapter(loyaltyAdapter);
         recyclerView.addItemDecoration(new HorizontalSpaceItemDecoration(1));
         return view;
 

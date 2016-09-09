@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by adiam on 7/13/2016.
  */
-public class MyLoyaltyAdapter extends RecyclerView.Adapter<MyLoyaltyAdapter.ViewHolder> {
+public class LoyaltyAdapter extends RecyclerView.Adapter<LoyaltyAdapter.ViewHolder> {
 
     List<Integer> loyaltyIcon;
     List<String> loyaltyText1;
@@ -34,16 +34,16 @@ public class MyLoyaltyAdapter extends RecyclerView.Adapter<MyLoyaltyAdapter.View
     Context mContext;
 
 
-    public MyLoyaltyAdapter(List<Integer> loyaltyIcon, List<String> loyaltyText1, List<String> loyaltyText2,
-                            List<String> loyaltyPointsText, List<Integer> loyaltyPointsIcon,
-                            List<String> dateTime, List<Integer> loyaltyStamps1,
-                            List<Integer> loyaltyStamps2,List<Integer> loyaltyStamps3,
-                            List<Integer> loyaltyStamps4,List<Integer> loyaltyStamps5,
-                            List<Integer> loyaltyStamps6,List<Integer> loyaltyStamps7,
-                            List<Integer> loyaltyStamps8,List<Integer> loyaltyStamps9,
-                            List<Integer> loyaltyStamps10,List<Integer> loyaltyStamps11,
-                            List<Integer> loyaltyStamps12,List<Integer> loyaltyStamps13,
-                            List<Integer> loyaltyStamps14, List<Integer> loyaltyStamps15,Context mContext) {
+    public LoyaltyAdapter(List<Integer> loyaltyIcon, List<String> loyaltyText1, List<String> loyaltyText2,
+                          List<String> loyaltyPointsText, List<Integer> loyaltyPointsIcon,
+                          List<String> dateTime, List<Integer> loyaltyStamps1,
+                          List<Integer> loyaltyStamps2, List<Integer> loyaltyStamps3,
+                          List<Integer> loyaltyStamps4, List<Integer> loyaltyStamps5,
+                          List<Integer> loyaltyStamps6, List<Integer> loyaltyStamps7,
+                          List<Integer> loyaltyStamps8, List<Integer> loyaltyStamps9,
+                          List<Integer> loyaltyStamps10, List<Integer> loyaltyStamps11,
+                          List<Integer> loyaltyStamps12, List<Integer> loyaltyStamps13,
+                          List<Integer> loyaltyStamps14, List<Integer> loyaltyStamps15, Context mContext) {
         this.loyaltyIcon = loyaltyIcon;
         this.loyaltyText1 = loyaltyText1;
         this.loyaltyText2 = loyaltyText2;
@@ -64,7 +64,7 @@ public class MyLoyaltyAdapter extends RecyclerView.Adapter<MyLoyaltyAdapter.View
 
 
     @Override
-    public MyLoyaltyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public LoyaltyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         CardView cardView = (CardView) inflater.inflate(R.layout.loyalty_list_item,parent,false);
         ViewHolder viewHolder = new ViewHolder(cardView,mContext);
@@ -72,7 +72,7 @@ public class MyLoyaltyAdapter extends RecyclerView.Adapter<MyLoyaltyAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(MyLoyaltyAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(LoyaltyAdapter.ViewHolder holder, int position) {
         holder.loyaltyText1.setText(loyaltyText1.get(position));
         holder.loyaltyIcon.setImageResource(loyaltyIcon.get(position));
         holder.loyaltyText2.setText(loyaltyText2.get(position));
