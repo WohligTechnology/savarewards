@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -28,7 +30,7 @@ public class SignUpMobileFragment extends AppCompatActivity {
     EditText etotp;
     private static final String FORMAT = "%01d:%02d";
     Button bresendotp,bcallme;
-    int seconds , minutes;
+    int seconds ,minutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,21 +83,40 @@ public class SignUpMobileFragment extends AppCompatActivity {
                 return false;
             }
         });
-        /*etotp.setOnClickListener(new View.OnClickListener() {
+        etotp.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View view) {
-                Log.d("hello", "onClick: "+etotp.getText());
-                if(etotp.getText().equals("123456"))
-                {
-                    Intent i = new Intent(getApplicationContext(), SavaActivity.class);
-                    startActivity(i);
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (i == EditorInfo.IME_ACTION_DONE) {
+                    if(etotp.getText().equals("123456"))
+                    {
+                        Intent intent= new Intent(getApplicationContext(), SavaActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
-        });*/
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(etotp.getText().equals("123456"))
+                {
+                    Log.d("ganesh", "onTextChanged: "+etotp.getText());
+                    Intent intent= new Intent(getApplicationContext(), SavaActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+
         digit = (TextView) findViewById(R.id.txt_digit);
         new CountDownTimer(300000, 1000) {
 
             public void onTick(long millisUntilFinished) {
+
                 digit.setText(""+String.format(FORMAT,
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
                                 TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),

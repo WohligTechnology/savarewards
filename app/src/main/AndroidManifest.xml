@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Welcome"
+            android:name=".MainActivity"
             android:label="Sava"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SingUpActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".NavDrawerActivity" />
         <activity android:name=".ScanningCodeActivity"></activity>
         <activity android:name=".CongratesForpoints" />
@@ -47,11 +47,20 @@
         <activity android:name=".AboutYouActivity" />
         <activity android:name=".Contacts" />
         <activity android:name=".Location" />
+        <activity android:name="TCActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="com.wohlig.sava.TCActivity" />
+            </intent-filter>
+        </activity>
 
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
 
     </application>

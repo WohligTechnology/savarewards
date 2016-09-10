@@ -3,30 +3,18 @@ package com.wohlig.sava;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
-import android.support.v8.renderscript.Allocation;
-import android.support.v8.renderscript.Element;
 import android.support.v8.renderscript.RenderScript;
-import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
-
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
-
-import jp.wasabeef.blurry.Blurry;
-import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 /**
  * Created by Mahesh on 8/11/2016.
@@ -193,7 +181,7 @@ public class Nav_draw extends Fragment {
         bsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SingUpActivity.class);
+                Intent intent = new Intent(getActivity(), SignUpActivity.class);
                 startActivity(intent);
             }
         });

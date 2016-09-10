@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageView eye_open,info;
     EditText edt_password;
     boolean pass = false;
+    TextView tvsignup;
 
 
 
@@ -30,6 +32,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SavaActivity.class);
+                startActivity(intent);
+            }
+        });
+        tvsignup= (TextView) findViewById(R.id.tv_signup);
+        tvsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(intent);
             }
         });

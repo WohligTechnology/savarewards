@@ -62,16 +62,16 @@
                     android:text="@string/plsverifyto"
                     android:textAlignment="center" />
 
-              <!--  <android.support.v7.widget.AppCompatSpinner
-                    android:id="@+id/spcode"
-                    style="@style/Widget.AppCompat.Spinner.Underlined"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/email1"
-                    android:layout_marginLeft="5dp"
-                    android:entries="@array/countrycode"
-                    android:hint="+ 44"
-                    android:textAlignment="center" />-->
+                <!--  <android.support.v7.widget.AppCompatSpinner
+                      android:id="@+id/spcode"
+                      style="@style/Widget.AppCompat.Spinner.Underlined"
+                      android:layout_width="100dp"
+                      android:layout_height="match_parent"
+                      android:layout_below="@+id/email1"
+                      android:layout_marginLeft="5dp"
+                      android:entries="@array/countrycode"
+                      android:hint="+ 44"
+                      android:textAlignment="center" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,47 +100,28 @@
                         android:hint="Mobile Number"
                         android:inputType="phone"
                         android:singleLine="true"
+                        android:editable="false"
                         android:textColorLink="@color/colorPrimaryDark" />
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+
+                <CheckBox
+                    android:id="@+id/cb_tc"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="10dp"
+                    android:text="@string/iagree"
+                    android:padding="5dp" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="5dp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="i agree to the sava"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="terms and conditions"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="and"
-                            android:textSize="18sp" />
-                    </LinearLayout>
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_tc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/iagree"
+                    android:clickable="true"
+                    android:padding="5dp" />
 
                 <Button
                     android:id="@+id/button31"

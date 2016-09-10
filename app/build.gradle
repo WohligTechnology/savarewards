@@ -16,6 +16,9 @@ android {
 
 
     }
+    repositories {
+        mavenCentral()
+    }
     dexOptions {
         incremental true
         javaMaxHeapSize "4G"
@@ -56,6 +59,8 @@ dependencies {
     // If you want to use the GPU Filters
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
     compile "com.splitwise:tokenautocomplete:2.0.7@aar"
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.google.android.gms:play-services-auth:9.2.1'
 
 
 }

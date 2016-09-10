@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                >
 
                 <TextView
                     android:id="@+id/txt_already_member"
@@ -138,11 +138,13 @@
                     android:textColor="@color/black_000000" />
 
                 <TextView
-                    android:id="@+id/txt_signup"
+                    android:id="@+id/tv_signup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:padding="15dp"
                     android:text="@string/signup"
+                    android:clickable="true"
                     android:textColor="@android:color/holo_blue_dark"
                     android:textStyle="bold" />
 
@@ -151,7 +153,8 @@
             <include
                 layout="@layout/fb_gplus_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
         </LinearLayout>
 
 

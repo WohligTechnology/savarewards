@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Sava</string>
+    <!--fbid-->
+    <string name="facebook_app_id">971621266316449</string>
+
     <string name="category">Category</string>
     <string name="gold">GOLD</string>
     <string name="total_points">TOTAL POINTS</string>
@@ -43,7 +46,7 @@
     <string name="maheshmaurya">Mahesh Maurya</string>
     <string name="code">+ 44</string>
     <string name="password">Password</string>
-    <string name="iagree">I agree to the Sava <font colour='#00bfff'>Terms and Conditions </font>and  <font colour='#00bfff'>Privacy Policy </font></string>
+    <string name="iagree">I agree to the Sava <a href="https://www.facebook.com/">Terms and Conditions </a><!--and  <a href="https://www.facebook.com/">Privacy Policy </a>--></string>
     <string name="alreadyhaveacc">Already have an account?</string>
     <string name="name">Name</string>
     <string name="plsverifyto">Please verify your mobile number to complete your sign up</string>

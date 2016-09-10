@@ -3,32 +3,43 @@ package com.wohlig.sava;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
  * Created by Mahesh on 7/30/2016.
  */
-public class SingUpActivity extends Activity {
+public class SignUpActivity extends Activity {
     CheckBox checkBox;
     EditText edt_password;
     ImageView eye_open,info;
     Button button3;
     ImageView left;
     boolean pass = false;
+    CheckBox cb_tc;
+    TextView tv_tc;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        checkBox = (CheckBox) findViewById(R.id.checkBox);
+        cb_tc= (CheckBox) findViewById(R.id.cb_tc);
+        tv_tc= (TextView) findViewById(R.id.tv_tc);
+//
+//        cb_tc.setMovementMethod(LinkMovementMethod.getInstance());
+
+        if (tv_tc != null) {
+            tv_tc.setMovementMethod(LinkMovementMethod.getInstance());
+        }
         edt_password = (EditText) findViewById(R.id.edt_password);
         edt_password.setTransformationMethod(new PasswordTransformationMethod());
         eye_open = (ImageView) findViewById(R.id.eye);
@@ -51,7 +62,7 @@ public class SingUpActivity extends Activity {
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SingUpActivity.this, "short length", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, "short length", Toast.LENGTH_SHORT).show();
             }
         });
         button3 = (Button) findViewById(R.id.button3);
