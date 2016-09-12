@@ -277,7 +277,7 @@
             android:src="@drawable/shapedeny" />
 
         <ImageView
-            android:id="@+id/img_greenarrow"
+            android:id="@+id/ivgreenArrow"
             android:layout_width="110dp"
             android:layout_height="20dp"
             android:layout_alignTop="@+id/ivswiperight"
@@ -285,7 +285,7 @@
             android:src="@drawable/greenarrow" />
 
         <ImageView
-            android:id="@+id/img_redarrow"
+            android:id="@+id/ivredArrow"
             android:layout_width="110dp"
             android:layout_height="20dp"
             android:layout_alignBottom="@+id/ivswipeleft"

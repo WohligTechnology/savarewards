@@ -21,8 +21,8 @@ public class ConfirmRedemption extends AppCompatActivity implements swipeListene
 
     private ImageView ivswiperight;
     private ImageView ivswipeleft;
-    private ImageView imageView3;
-    private ImageView imageView4;
+    private ImageView ivgreenArrow;
+    private ImageView ivredArrow;
     private TextView textView;
 
     public static int screenHalfWidth;
@@ -38,8 +38,8 @@ public class ConfirmRedemption extends AppCompatActivity implements swipeListene
         setContentView(R.layout.confirmredemption);
         ivswiperight = (ImageView) findViewById(R.id.ivswiperight);
         ivswipeleft = (ImageView) findViewById(R.id.ivswipeleft);
-        imageView3 = (ImageView) findViewById(R.id.img_greenarrow);
-        imageView4 = (ImageView) findViewById(R.id.img_redarrow);
+        ivgreenArrow = (ImageView) findViewById(R.id.ivgreenArrow);
+        ivredArrow = (ImageView) findViewById(R.id.ivredArrow);
         textView = (TextView) findViewById(R.id.slide);
 
         OnLeftSwipeListener onLeftSwipeListener = new OnLeftSwipeListener(this, this);
@@ -65,8 +65,8 @@ public class ConfirmRedemption extends AppCompatActivity implements swipeListene
     @Override
     public void onSwipe(View view, int width) {
         View oppositeView = getOppositeView(view);
-        imageView3.setVisibility(View.GONE);
-        imageView4.setVisibility(View.GONE);
+        ivgreenArrow.setVisibility(View.GONE);
+        ivredArrow.setVisibility(View.GONE);
         textView.setVisibility(View.GONE);
         oppositeView.setVisibility(View.GONE);
      }
@@ -76,8 +76,8 @@ public class ConfirmRedemption extends AppCompatActivity implements swipeListene
         View oppositeView = getOppositeView(view);
         oppositeView.setVisibility(View.VISIBLE);
         view.setVisibility(View.VISIBLE);
-        imageView3.setVisibility(View.VISIBLE);
-        imageView4.setVisibility(View.VISIBLE);
+        ivgreenArrow.setVisibility(View.VISIBLE);
+        ivredArrow.setVisibility(View.VISIBLE);
         textView.setVisibility(View.VISIBLE);
         RelativeLayout.LayoutParams oppositeLayoutParams = (RelativeLayout.LayoutParams) oppositeView.getLayoutParams();
         RelativeLayout.LayoutParams viewLayoutParams = (RelativeLayout.LayoutParams) view.getLayoutParams();

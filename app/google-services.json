@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "142050484798",
+    "project_id": "firebase-sava"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142050484798:android:eec709febc09a988",
+        "android_client_info": {
+          "package_name": "com.wohlig.sava"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142050484798-mj06d3r6m2jfuovhpshlmd9o12hm8uh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wohlig.sava",
+            "certificate_hash": "481D5ADFBBE921DE83177C459CCECB97005FEF93"
+          }
+        },
+        {
+          "client_id": "142050484798-psas417bdqt6c24425ph0c3de2ll4nkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74qqm2vGB4yAOyBuICK2hWRveq9X1ZmA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,19 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.hbb20.CountryCodePicker;
 
 /**
  * Created by adiam on 7/19/2016.
  */
-public class MobileVerificationActivity extends AppCompatActivity {
+public class Mobile_numberActivity extends AppCompatActivity {
     ImageView left_arrow;
     View view;
     Button button3;
@@ -24,6 +26,8 @@ public class MobileVerificationActivity extends AppCompatActivity {
     Spinner code;
     String code1,mob;
     CountryCodePicker code2;
+    CheckBox cb_tc;
+    TextView tv_tc;
 
 
     @Override
@@ -37,7 +41,7 @@ public class MobileVerificationActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        cb_tc= (CheckBox) findViewById(R.id.cb_tc);
 /*
         code= (Spinner) findViewById(R.id.spcode);
 */
@@ -48,13 +52,16 @@ public class MobileVerificationActivity extends AppCompatActivity {
                 code1= String.valueOf(code.getSelectedItem());
             }
         });*/
-        mob_ph= (EditText) findViewById(R.id.edt_mobile);
+        /*mob_ph= (EditText) findViewById(R.id.edt_mobile);
         mob_ph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mob= String.valueOf(mob_ph.getText());
             }
-        });
+        });*/
+        if (cb_tc != null) {
+            cb_tc.setMovementMethod(LinkMovementMethod.getInstance());
+        }
         button3= (Button) findViewById(R.id.button31);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,10 +73,10 @@ public class MobileVerificationActivity extends AppCompatActivity {
                 code2.getSelectedCountryCodeAsInt();
 
                 String phone=code1+" "+mob;
-                Intent i= new Intent(getApplicationContext(),SignUpMobileFragment.class);
+                Intent i= new Intent(getApplicationContext(),Mobile_verificationActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("phone", phone); //This is for a String
-                i.setClass(getApplicationContext(), SignUpMobileFragment.class);
+                i.setClass(getApplicationContext(), Mobile_verificationActivity.class);
                 i.putExtras(bundle);
                 startActivity(i);
             }

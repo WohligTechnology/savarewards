@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), MobileVerificationActivity.class);
+                Intent i = new Intent(getApplicationContext(), Mobile_numberActivity.class);
                 startActivity(i);
             }
         });
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                         LoginManager.getInstance().logOut();
                         Log.d("details of fb", fb_Name + fb_email + fb_first_name + fb_picture);
-                        startActivity(new Intent(getApplicationContext(), MobileVerificationActivity.class).putExtra("Login_source", "Facebook").putExtra("userSessionId", userSessionId));
+                        startActivity(new Intent(getApplicationContext(), Mobile_numberActivity.class).putExtra("Login_source", "Facebook").putExtra("userSessionId", userSessionId));
                         finish();
 
 
@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                // g_sign_in();
             }
             Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-            startActivity(new Intent(MainActivity.this, MobileVerificationActivity.class).putExtra("Login_source", "Google").putExtra("userSessionId",userSessionId));
+            startActivity(new Intent(MainActivity.this, Mobile_numberActivity.class).putExtra("Login_source", "Google").putExtra("userSessionId",userSessionId));
             finish();
 
 

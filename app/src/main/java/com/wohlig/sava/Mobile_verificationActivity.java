@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Mahesh on 7/30/2016.
  */
-public class SignUpMobileFragment extends AppCompatActivity {
+public class Mobile_verificationActivity extends AppCompatActivity {
     View view;
     ImageView left;
     ImageView edit;

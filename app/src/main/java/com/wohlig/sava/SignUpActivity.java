@@ -3,7 +3,6 @@ package com.wohlig.sava;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -18,27 +17,22 @@ import android.widget.Toast;
  * Created by Mahesh on 7/30/2016.
  */
 public class SignUpActivity extends Activity {
-    CheckBox checkBox;
     EditText edt_password;
     ImageView eye_open,info;
     Button button3;
     ImageView left;
     boolean pass = false;
     CheckBox cb_tc;
-    TextView tv_tc;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        cb_tc= (CheckBox) findViewById(R.id.cb_tc);
-        tv_tc= (TextView) findViewById(R.id.tv_tc);
-//
-//        cb_tc.setMovementMethod(LinkMovementMethod.getInstance());
+        cb_tc= (CheckBox) findViewById(R.id.cb_tc2);
 
-        if (tv_tc != null) {
-            tv_tc.setMovementMethod(LinkMovementMethod.getInstance());
+        if (cb_tc != null) {
+            cb_tc.setMovementMethod(LinkMovementMethod.getInstance());
         }
         edt_password = (EditText) findViewById(R.id.edt_password);
         edt_password.setTransformationMethod(new PasswordTransformationMethod());
@@ -69,7 +63,7 @@ public class SignUpActivity extends Activity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), SignUpMobileFragment.class);
+                Intent i = new Intent(getApplicationContext(), Mobile_verificationActivity.class);
                 startActivity(i);
             }
         });

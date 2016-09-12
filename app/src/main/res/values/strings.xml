@@ -46,7 +46,7 @@
     <string name="maheshmaurya">Mahesh Maurya</string>
     <string name="code">+ 44</string>
     <string name="password">Password</string>
-    <string name="iagree">I agree to the Sava <a href="https://www.facebook.com/">Terms and Conditions </a><!--and  <a href="https://www.facebook.com/">Privacy Policy </a>--></string>
+    <string name="iagree">I agree to the Sava <a href="https://www.facebook.com/">Terms and Conditions </a>and  <a href="https://www.facebook.com/">Privacy Policy </a></string>
     <string name="alreadyhaveacc">Already have an account?</string>
     <string name="name">Name</string>
     <string name="plsverifyto">Please verify your mobile number to complete your sign up</string>
@@ -164,4 +164,5 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_draw">DrawActivity</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

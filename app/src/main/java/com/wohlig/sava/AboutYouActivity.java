@@ -1,25 +1,36 @@
 package com.wohlig.sava;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.ex.chips.BaseRecipientAdapter;
+import com.android.ex.chips.RecipientEditTextView;
+import com.android.ex.chips.recipientchip.DrawableRecipientChip;
+import com.doodle.android.chips.views.ChipsEditText;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**\
  * Created by adiam on 7/29/2016.
@@ -29,9 +40,12 @@ public class AboutYouActivity extends AppCompatActivity {
     TextView toolbartitle;
     ImageView mButton;
     Button display;
-    ContactsCompletionView completionView;
-    Person[] people;
-    ArrayAdapter<Person> adapter;
+    RecipientEditTextView chip;
+    EditText etchip;
+    static Map<String,List<String>> yourMap = new HashMap<String,List<String>>();
+    static  List<String> info = new ArrayList<String>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,22 +59,15 @@ public class AboutYouActivity extends AppCompatActivity {
 
         mButton = (ImageView) findViewById(R.id.add);
         add(this,mButton);
+        chip = (RecipientEditTextView) findViewById(R.id.edt_dietary);
 
-        people = new Person[]{
-                new Person("Marshall Weir", "marshall@example.com"),
-                new Person("Margaret Smith", "margaret@example.com"),
-                new Person("Max Jordan", "max@example.com"),
-                new Person("Meg Peterson", "meg@example.com"),
-                new Person("Amanda Johnson", "amanda@example.com"),
-                new Person("Terry Anderson", "terry@example.com")
-        };
-        adapter = new ArrayAdapter<Person>(this, android.R.layout.simple_list_item_1, people);
+        chip.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        chip.setAdapter(new BaseRecipientAdapter(BaseRecipientAdapter.QUERY_TYPE_PHONE, this));
+        DrawableRecipientChip[] chips = chip.getSortedRecipients();
 
-        completionView = (ContactsCompletionView)findViewById(R.id.searchView);
-        completionView.setAdapter(adapter);
 
-     /*   display= (Button) findViewById(R.id.display);
-        display(this,display);*/
+        display= (Button) findViewById(R.id.display);
+        save(this,display);
 
 
     }
@@ -99,11 +106,14 @@ public class AboutYouActivity extends AppCompatActivity {
                     Spinner person_age = (Spinner) innerLayout.findViewById(R.id.spperson_age);
                     msg.add((String) person.getSelectedItem());
                     msg1.put((String) person.getSelectedItem(),(String) person_age.getSelectedItem());
-
+                  /*  info.add((String) person.getSelectedItem());
+                    info.add((String) person_age.getSelectedItem());
+                    yourMap.put("key", info);
+*/
                 }
                 Toast t = Toast.makeText(activity.getApplicationContext(), msg1.toString(), Toast.LENGTH_SHORT);
                 t.show();
- 
+
             }
         });
     }
@@ -129,5 +139,6 @@ public class AboutYouActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }

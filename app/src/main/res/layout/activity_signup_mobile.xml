@@ -90,6 +90,7 @@
                         android:id="@+id/ccp"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center_vertical"
                         app:defaultNameCode="US" />
 
                     <EditText
@@ -114,14 +115,7 @@
                     android:text="@string/iagree"
                     android:padding="5dp" />
 
-                <TextView
-                    android:id="@+id/tv_tc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="@string/iagree"
-                    android:clickable="true"
-                    android:padding="5dp" />
+
 
                 <Button
                     android:id="@+id/button31"
