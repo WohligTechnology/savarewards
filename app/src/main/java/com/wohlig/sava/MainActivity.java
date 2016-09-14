@@ -43,7 +43,7 @@ import java.util.Arrays;
  */
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     ViewPager viewPager;
-    ViewPagerAdapter adapter;
+    welcomepagerAdapter adapter;
     DotIndicator indicator;
     RelativeLayout im_new;
     TextView skip;
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter = new welcomepagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new One(), "1");
         adapter.addFragment(new One(), "2");
         adapter.addFragment(new One(), "3");

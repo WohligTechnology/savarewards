@@ -183,8 +183,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:maxLines="3"
                     android:text="@string/_1st_floor_the_destination_gm_road_chembur_east_mumbai_maharashtra"
@@ -253,8 +253,8 @@
                         android:id="@+id/wine"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_margin="5dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
                         android:src="@drawable/wine" />
 
                     <LinearLayout
@@ -319,8 +319,8 @@
                         android:id="@+id/idea_icon"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_margin="5dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
                         android:src="@drawable/idea_icon" />
 
                     <LinearLayout
@@ -341,9 +341,9 @@
                             android:id="@+id/meal_from_menu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:singleLine="false"
-                            android:maxLines="2"
                             android:layout_marginRight="30dp"
+                            android:maxLines="2"
+                            android:singleLine="false"
                             android:text="@string/meal_from_the_a_la_carte_menu_with_a_cham"
                             android:textColor="@color/grey_e5e5e5" />
                     </LinearLayout>
@@ -368,7 +368,9 @@
             android:layout_height="55dp"
             android:layout_margin="5dp">
 
-            `<RelativeLayout
+            `
+
+            <RelativeLayout
                 android:id="@+id/relative_more_offers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -480,56 +482,83 @@
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
-        <android.support.design.widget.CoordinatorLayout
-            android:id="@+id/coordinator"
+        <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:id="@+id/coordinator"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:background="@color/white_FFFFFF">-->
+
+        <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+
+        <!--<android.support.design.widget.TabLayout-->
+        <!--android:id="@+id/tabs"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/white_FFFFFF"-->
+        <!--app:tabGravity="fill"-->
+        <!--app:tabSelectedTextColor="@color/colorPrimaryDark"-->
+        <!--app:tabTextColor="@color/black_000000">-->
+
+        <!--&lt;!&ndash;for tab layout-->
+        <!--app:tabMinWidth="120dp"-->
+        <!--app:tabMode="scrollable"&ndash;&gt;-->
+        <!--</android.support.design.widget.TabLayout>-->
+
+
+        <!--</android.support.design.widget.AppBarLayout>-->
+
+        <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/view_pager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="500dp"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <!--</android.support.v4.view.ViewPager>-->
+        <!--</android.support.design.widget.CoordinatorLayout>-->
+
+
+        <RelativeLayout
+            android:id="@+id/rlviewpager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@color/white_FFFFFF">
+            android:layout_height="550dp"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
+
+            <Button
+                android:id="@+id/buttonAddPage"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                android:layout_alignBottom="@+id/editTextPageName"
+                android:layout_alignEnd="@+id/fragmentParent"
+                android:text="Add Page" />
 
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white_FFFFFF"
-                    app:tabGravity="fill"
-                    app:tabSelectedTextColor="@color/colorPrimaryDark"
-                    app:tabTextColor="@color/black_000000">
+            <fragment
+                android:id="@+id/fragmentParent"
+                android:name="com.wohlig.sava.FragmentParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/buttonAddPage"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                card_view:layout="@layout/fragment_parent" />
 
-                    <!--for tab layout
-                    app:tabMinWidth="120dp"
-                    app:tabMode="scrollable"-->
-                </android.support.design.widget.TabLayout>
-               <!-- <me.amiee.nicetab.NiceTabLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/sliding_tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?colorPrimary"
-                    app:ntlDividerPaddingLeft="8dp"
-                    app:ntlDividerPaddingRight="8dp"
-                    app:ntlIndicatorHeight="2dp"
-                    app:ntlOverlayColor="#aa1a237e"
-                    app:ntlTabMode="both"
-                    app:ntlTextSize="20sp"
-                    app:ntlTextStyle="normal"
-                    app:ntlUnderlineHeight="1dp"/>-->
-
-            </android.support.design.widget.AppBarLayout>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            </android.support.v4.view.ViewPager>
-        </android.support.design.widget.CoordinatorLayout>
+            <EditText
+                android:id="@+id/editTextPageName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:hint="Page Name" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/claim_offer"
@@ -545,9 +574,9 @@
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:layout_gravity="center"
-            card_view:cardCornerRadius="2dp"
             android:clickable="true"
-            android:onClick="points">
+            android:onClick="points"
+            card_view:cardCornerRadius="2dp">
 
             <RelativeLayout
                 android:id="@+id/relative_burger"
@@ -610,9 +639,9 @@
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:layout_gravity="center"
-            card_view:cardCornerRadius="2dp"
             android:clickable="true"
-            android:onClick="points">
+            android:onClick="points"
+            card_view:cardCornerRadius="2dp">
 
             <RelativeLayout
                 android:id="@+id/relative_pizza1"
@@ -678,8 +707,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
-                >
+                android:layout_margin="5dp">
 
                 <TextView
                     android:id="@+id/more_redemption_offers"
@@ -711,15 +739,14 @@
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:padding="5dp"
-            >
+            android:padding="5dp">
 
             <RelativeLayout
                 android:id="@+id/relative_loyalty_statement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_gravity="center_vertical">
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -730,8 +757,8 @@
                         android:id="@+id/image_loyalty"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_margin="5dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
                         android:src="@drawable/loyalty" />
 
                     <TextView
@@ -769,14 +796,13 @@
                 android:id="@+id/relative_comm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_gravity="center_vertical">
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/idea_icon_comm"
@@ -824,8 +850,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
-                >
+                android:layout_margin="5dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -1219,8 +1244,8 @@
                     android:id="@+id/see_other_offers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
                     android:text="@string/see_other_offers_6"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
@@ -1229,9 +1254,9 @@
                     android:id="@+id/img_arrw_offers"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_margin="10dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
                     android:src="@drawable/arrow" />
 
 
@@ -1243,10 +1268,10 @@
             android:id="@+id/card_view_some_wrong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
             android:clickable="true">
 
             <LinearLayout
@@ -1266,8 +1291,8 @@
                         android:id="@+id/some_wrong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
                         android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:text="@string/somethingwrong"
                         android:textColor="@color/black_000000"
                         android:textSize="16sp" />
@@ -1277,12 +1302,11 @@
                         android:id="@+id/img_arrw_some_wrong"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_margin="10dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
                         android:src="@drawable/down_arrow"
-                        android:tint="#828282"
-                        />
+                        android:tint="#828282" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -1518,9 +1542,9 @@
                             android:layout_margin="10dp"
                             android:background="@drawable/square_edittext"
                             android:gravity="left"
-                            android:padding="10dp"
                             android:hint="Demo"
-                            android:maxLines="10" />
+                            android:maxLines="10"
+                            android:padding="10dp" />
 
                         <Button
                             android:id="@+id/submit"

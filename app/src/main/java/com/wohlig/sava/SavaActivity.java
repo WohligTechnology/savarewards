@@ -186,7 +186,8 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
 
     }
     public void loyalty(View view) {
-        Intent intent = new Intent(this, secondPage.class);
+        Intent intent = new Intent(SavaActivity.this, secondPage.class);
+        intent.putExtra("loyalty",1);
         startActivity(intent);
 
     }

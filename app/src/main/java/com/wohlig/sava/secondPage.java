@@ -16,11 +16,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +37,14 @@ public class secondPage extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     CardView burger,pizza;
-    CoordinatorLayout corCoordinatorLayout;
+    RelativeLayout rlviewpager;
     CardView card_view_some_wrong;
     ImageView ivwrong;
     LinearLayout linearLayout;
     ScrollView scrollView;
+    Button buttonAddPage;
+    FragmentParent fragmentParent;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,20 +107,35 @@ public class secondPage extends AppCompatActivity {
         bold.setTypeface(myCustomFont);
         regular.setTypeface(myCustomFont2);
         light.setTypeface(myCustomFont3);
+//
+//        viewPager = (ViewPager) findViewById(R.id.view_pager);
+//        setupViewPager(viewPager);
+//
+//        tabLayout = (TabLayout) findViewById(R.id.tabs);
+//        tabLayout.setupWithViewPager(viewPager);
 
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        setupViewPager(viewPager);
+        getIDs();
+        setEvents();
+        ImageView share_icon= (ImageView) findViewById(R.id.share_icon);
+        share_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    getApplicationContext().startActivity(Intent.createChooser(shareIntent, "Share Via"));
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-
-
+                }
+                catch(Exception e)
+                { //e.toString();
+                }
+            }
+        });
 
         pizza= (CardView) findViewById(R.id.card_view_pizza1);
         burger= (CardView) findViewById(R.id.card_view_burger1);
         scrollView= (ScrollView) findViewById(R.id.scroll);
         linearLayout= (LinearLayout) findViewById(R.id.linear1);
-        corCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator);
+        rlviewpager = (RelativeLayout) findViewById(R.id.rlviewpager);
         ivwrong= (ImageView) findViewById(R.id.img_arrw_some_wrong);
         card_view_some_wrong = (CardView) findViewById(R.id.card_view_some_wrong);
         card_view_some_wrong.setOnClickListener(new View.OnClickListener() {
@@ -137,18 +159,28 @@ public class secondPage extends AppCompatActivity {
 
         Intent i=getIntent();
         int j = i.getIntExtra("stamp",0);
+        Intent i1=getIntent();
+
+        int j1 = i1.getIntExtra("loyalty",0);
+        Log.d("onCreate: ",String.valueOf(j1));
+
         if(j==1)
         {
             pizza.setVisibility(View.GONE);
             burger.setVisibility(View.GONE);
-            corCoordinatorLayout.setVisibility(View.VISIBLE);
+            rlviewpager.setVisibility(View.VISIBLE);
 
 
 
         }
+        if(j1==1)
+        {
+            scrollView.scrollTo(0, (int) burger.getY());
+        }
+
         if(j==2)
         {
-            corCoordinatorLayout.setVisibility(View.GONE);
+            rlviewpager.setVisibility(View.GONE);
             pizza.setVisibility(View.VISIBLE);
             burger.setVisibility(View.VISIBLE);
         }
@@ -214,5 +246,24 @@ public class secondPage extends AppCompatActivity {
     public void backPage(View view){
         Intent intent = new Intent(this,SavaActivity.class);
         startActivity(intent);
+    }
+    private void getIDs() {
+        buttonAddPage = (Button) findViewById(R.id.buttonAddPage);
+        fragmentParent = (FragmentParent) this.getSupportFragmentManager().findFragmentById(R.id.fragmentParent);
+        textView = (TextView) findViewById(R.id.editTextPageName);
+    }
+
+    private void setEvents() {
+        buttonAddPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!textView.getText().toString().equals("")) {
+                    fragmentParent.addPage(/*textView.getText() +*/ "CARD");
+                    textView.setText("");
+                } else {
+                    Toast.makeText(secondPage.this, "Page name is empty", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
