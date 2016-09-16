@@ -5,8 +5,10 @@
 package com.wohlig.sava;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
@@ -16,8 +18,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,7 +45,7 @@ public class secondPage extends AppCompatActivity {
     RelativeLayout rlviewpager;
     CardView card_view_some_wrong;
     ImageView ivwrong;
-    LinearLayout linearLayout;
+    LinearLayout linearLayout,llbottom;
     ScrollView scrollView;
     Button buttonAddPage;
     FragmentParent fragmentParent;
@@ -121,8 +126,16 @@ public class secondPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                    getApplicationContext().startActivity(Intent.createChooser(shareIntent, "Share Via"));
+                  /*  Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                    sharingIntent.setType("text/html");
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("<p>This is the text that will be shared.</p>"));
+                    startActivity(Intent.createChooser(sharingIntent,"Share using"));*/
+
+                    Intent sharingIntent1 = new Intent(Intent.ACTION_SEND);
+                    Uri screenshotUri = Uri.parse("http://sudarmuthu.com/wp/wp-content/uploads/2011/01/sharing-content-android.png");
+                    sharingIntent1.setType("image/png");
+                    sharingIntent1.putExtra(Intent.EXTRA_STREAM, screenshotUri);
+                    startActivity(Intent.createChooser(sharingIntent1, "Share image using"));
 
                 }
                 catch(Exception e)
@@ -132,9 +145,12 @@ public class secondPage extends AppCompatActivity {
         });
 
         pizza= (CardView) findViewById(R.id.card_view_pizza1);
+        llbottom= (LinearLayout) findViewById(R.id.llbottom);
         burger= (CardView) findViewById(R.id.card_view_burger1);
         scrollView= (ScrollView) findViewById(R.id.scroll);
         linearLayout= (LinearLayout) findViewById(R.id.linear1);
+        linearLayout.setVisibility(View.GONE );
+
         rlviewpager = (RelativeLayout) findViewById(R.id.rlviewpager);
         ivwrong= (ImageView) findViewById(R.id.img_arrw_some_wrong);
         card_view_some_wrong = (CardView) findViewById(R.id.card_view_some_wrong);
@@ -144,11 +160,15 @@ public class secondPage extends AppCompatActivity {
                 scrollView.fullScroll(ScrollView.FOCUS_DOWN);
                 if (linearLayout.isShown())
                 {
+
                     ivwrong.setRotation(360);
-                    scrollView.scrollTo(0, (int) burger.getY());
+                    scrollView.scrollTo(0, (int) llbottom.getY());
                     linearLayout.setVisibility(View.GONE );
+                    linearLayout.setFocusableInTouchMode(true);
                 }else{
                     ivwrong.setRotation(180);
+                    scrollView.scrollTo(0, (int) llbottom.getY());
+                    linearLayout.setFocusableInTouchMode(true);
                     linearLayout.setVisibility(View.VISIBLE );
 
                 }
@@ -266,4 +286,20 @@ public class secondPage extends AppCompatActivity {
             }
         });
     }
+    /**
+     *
+     * @param ctx
+     * @param v
+     */
+    public static void slide_down(Context ctx, View v){
+        Animation a = AnimationUtils.loadAnimation(ctx, R.anim.slide_down);
+        if(a != null){
+            a.reset();
+            if(v != null){
+                v.clearAnimation();
+                v.startAnimation(a);
+            }
+        }
+    }
+
 }

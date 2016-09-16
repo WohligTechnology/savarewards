@@ -44,11 +44,14 @@ public class ScanningCodeActivity extends AppCompatActivity implements ZXingScan
             public void onClick(View view) {
                 if(!flash1) {
                     mScannerView.setFlash(true);
+                    flash.setImageResource(R.drawable.flash_on);
                     flash1=true;
                 }
                 else
                 {
                     mScannerView.setFlash(false);
+                    flash.setImageResource(R.drawable.flash);
+
                     flash1=false;
                 }
             }

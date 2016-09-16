@@ -27,7 +27,7 @@
         android:weightSum="4">
 
         <com.github.siyamed.shapeimageview.CircularImageView
-            android:id="@+id/imageView"
+            android:id="@+id/header_profilepic"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/mic"

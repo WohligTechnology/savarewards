@@ -13,6 +13,8 @@ import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -59,7 +61,8 @@ public class Nav_draw extends Fragment {
                     subcat.setRotation(360);
                     subcategories.setVisibility(View.GONE );
                 }else{
-                    subcat.setRotation(180);
+                    Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.clockwise);
+                    subcat.startAnimation(animation);
                     subcategories.setVisibility(View.VISIBLE );
 
                 }

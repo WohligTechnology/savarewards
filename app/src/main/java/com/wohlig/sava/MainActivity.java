@@ -37,6 +37,8 @@ import com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Mahesh on 8/tag2/2016.
@@ -299,4 +301,39 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+    Timer timer;
+    int page = 1;
+
+    public void pageSwitcher(int seconds) {
+        timer = new Timer(); // At this line a new Thread will be created
+        timer.scheduleAtFixedRate(new RemindTask(), 0, seconds * 1000); // delay
+        // in
+        // milliseconds
+    }
+
+    // this is an inner class...
+    class RemindTask extends TimerTask {
+
+        @Override
+        public void run() {
+
+            // As the TimerTask run on a seprate thread from UI thread we have
+            // to call runOnUiThread to do work on UI thread.
+            runOnUiThread(new Runnable() {
+                public void run() {
+
+                    if (page > 4) { // In my case the number of pages are 5
+                        timer.cancel();
+                        // Showing a toast for just testing purpose
+                        Toast.makeText(getApplicationContext(), "Timer stoped",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        viewPager.setCurrentItem(page++);
+                    }
+                }
+            });
+
+        }
+    }
+
 }
