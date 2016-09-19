@@ -39,14 +39,16 @@ public class StoreFragment extends Fragment {
 
         List<String> data = new ArrayList<>(Arrays.asList(new String[]{"Pizza Hut","McDonald's","Burgerking","Subway"}));
         List<Integer> imageDataOne = new ArrayList<>(Arrays.asList(new Integer[]{R.drawable.pizzahut,R.drawable.mcd,R.drawable.burgerking,R.drawable.pizzahut}));
-        List<Integer> direction = new ArrayList<>(Arrays.asList(new Integer[]{R.drawable.location,R.drawable.location,R.drawable.location,R.drawable.location}));
+//      all images are same...
+//   List<Integer> direction = new ArrayList<>(Arrays.asList(new Integer[]{R.drawable.location,R.drawable.location,R.drawable.location,R.drawable.location}));
         List<String> distance = new ArrayList<>(Arrays.asList(new String[]{"10 mi","10 mi","10 mi","10 mi"}));
 
         List<String> data2 = new ArrayList<>(Arrays.asList(new String[]{"Pizza Hut Plus Restaurant","McDonald's","Burgerking","Subway"}));
         List<String> address = new ArrayList<>(Arrays.asList(new String[]{"31,Opposite Globus,Hill Road Bandra..","32,Gloucester avenue,Ray Road,Khar..","31,Opposite Globus,MGD Road.","31,Opposite Globus,MGD Road Bandra"}));
         List<String> type = new ArrayList<>(Arrays.asList(new String[]{"Italian Restaurants, Pizza","Malaysian Restaurants","German Restaurants, Austrian Re..","American Restaurants"}));
 
-        FavoritesAdapter favoritesAdapter = new FavoritesAdapter(data,imageDataOne,direction,distance,getActivity());
+//        FavoritesAdapter favoritesAdapter = new FavoritesAdapter(data,imageDataOne,direction,distance,getActivity());
+        FavoritesAdapter favoritesAdapter = new FavoritesAdapter(data,imageDataOne,distance,getActivity());
         mRecyclerView.setAdapter(favoritesAdapter);
         mRecyclerView.addItemDecoration(new VerticalSpaceItemDecoration(10));
 

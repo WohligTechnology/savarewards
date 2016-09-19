@@ -20,18 +20,23 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     List<String> distance;
     Context mContext;
 
-    public FavoritesAdapter(List<String> data, List<Integer> imgList, List<Integer> directn, List<String> distnce, Context mContext){
+    public FavoritesAdapter(List<String> data, List<Integer> imgList, List<String> distnce, Context mContext){
+        this.data = data;
+        this.imagList =imgList;
+        this.distance= distnce;
+        this.mContext = mContext;
+    }/*public FavoritesAdapter(List<String> data, List<Integer> imgList, List<Integer> directn, List<String> distnce, Context mContext){
         this.data = data;
         this.imagList =imgList;
         this.direction = directn;
         this.distance= distnce;
         this.mContext = mContext;
-    }
+    }*/
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        CardView cardView = (CardView) inflater.inflate(R.layout.card_item,null);
+        CardView cardView = (CardView) inflater.inflate(R.layout.favorites_singlecard,null);
         ViewHolder viewHolder = new ViewHolder(cardView,mContext);
         return viewHolder;
     }
@@ -40,7 +45,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.textView.setText(data.get(position));
         holder.imageView.setImageResource(imagList.get(position));
-        holder.direction.setImageResource(direction.get(position));
+//        holder.direction.setImageResource(direction.get(position));
         holder.distance.setText(distance.get(position));
     }
 
