@@ -63,7 +63,9 @@ dependencies {
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile 'com.klinkerapps:android-chips:+@aar'
-
+    compile ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+        exclude module: 'support-v4'
+    }
 }
 
 

@@ -44,6 +44,10 @@ public class AboutYouActivity extends AppCompatActivity {
     EditText etchip;
     static Map<String,List<String>> yourMap = new HashMap<String,List<String>>();
     static  List<String> info = new ArrayList<String>();
+    ImageView back;
+    TextView save;
+
+
 
 
 
@@ -57,6 +61,14 @@ public class AboutYouActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbartitle.setText("About You");
 
+        back = (ImageView) findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         mButton = (ImageView) findViewById(R.id.add);
         add(this,mButton);
         chip = (RecipientEditTextView) findViewById(R.id.edt_dietary);
@@ -68,28 +80,32 @@ public class AboutYouActivity extends AppCompatActivity {
 
         display= (Button) findViewById(R.id.display);
         save(this,display);
-
-
-    }
-
-    public void onClickAdd(View view) {
-        LayoutInflater ltInflater = getLayoutInflater();
-        final LinearLayout subLayoutFields = (LinearLayout) findViewById(R.id.ll_household);
-        final View view1 = ltInflater.inflate(R.layout.lladdview, subLayoutFields, true);
-        ImageView buttonRemove = (ImageView) view1.findViewById(R.id.remove);
-
-
-        buttonRemove.setOnClickListener(new View.OnClickListener() {
-
+        save = (TextView) findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                subLayoutFields.removeView((LinearLayout) (v.getParent().getParent()));
+//                String title = String.valueOf(titlespinner.getSelectedItem());
+//                String name = String.valueOf(etname.getText());
+//                String dob = String.valueOf(date.getText());
+//                String gender = String.valueOf(date.getText());
 
+                Intent i = new Intent();
+
+                Bundle bundle = new Bundle();
+//                bundle.putString("title", title); //This is for a String
+//                bundle.putString("name", name); //This is for a String
+//                bundle.putString("dob", dob); //This is for a String
+//                bundle.putString("gender", gender); //This is for a String
+                i.setClass(getApplicationContext(), PersonalDetailActivity.class);
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
 
     }
+
+
     public static void save(final Activity activity, Button btn)
     {
         btn.setOnClickListener(new View.OnClickListener() {

@@ -31,6 +31,7 @@ public class ConfirmRedemption1 extends AppCompatActivity implements swipeListen
     int j=0;
 
     private boolean flag = false;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,13 @@ public class ConfirmRedemption1 extends AppCompatActivity implements swipeListen
 
         ivswiperight.setOnTouchListener(onRightSwipeListener);
         ivswipeleft.setOnTouchListener(onLeftSwipeListener);
-
+        back= (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         MIN_WIDTH = (int) getResources().getDimension(R.dimen._100dp);
 
         WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);

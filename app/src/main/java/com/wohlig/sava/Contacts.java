@@ -39,6 +39,7 @@ public class Contacts extends AppCompatActivity {
 //                finish();
 //            }
 //        });
+
         etemail= (EditText) findViewById(R.id.etemail);
         etphone= (EditText) findViewById(R.id.etphone);
         spphone= (Spinner) findViewById(R.id.spphone);

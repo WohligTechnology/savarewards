@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Created by adiam on 7/6/2016.
  */
-public class SavaActivity extends AppCompatActivity implements Transformation {
+public class SavaActivity extends AppCompatActivity  {
 
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -63,6 +63,8 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         Intent intent= getIntent();
         value =intent.getIntExtra("value",0);
         viewPager.setCurrentItem(value);
+        toolbar(value);
+
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -72,19 +74,8 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
 
             @Override
             public void onPageSelected(int position) {
-                if (position == 0) {
-                    toolbar.setTitle("Store");
-                }
-                if (position == 1) {
-                    toolbar.setTitle("Loyalty");
-                }
-                if (position == 2) {
-                    toolbar.setTitle("Offers");
-                }
-                if (position == 3) {
-                    toolbar.setTitle("Notifications");
-                }
-                hideKeyboard();
+                toolbar(position);
+//                hideKeyboard();
             }
 
             @Override
@@ -111,20 +102,7 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
             btm_button.setVisibility(View.GONE);
         }
 
-
-
-
-      /*  ImageView imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_blur);
-
-        Picasso
-                .with(SavaActivity.this)
-                .load(R.drawable.offer4)
-                .transform(SavaActivity.this)
-                .into(imageView);*/
-
     }
-
-
 
     private void setUpIcons() {
         tabLayout.getTabAt(0).setIcon(R.drawable.my_store_selector);
@@ -141,6 +119,21 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         adapter.addFrag(new NotificationsFragment(), "NOTIFICATIONS");
 
         viewPager.setAdapter(adapter);
+    }
+    void toolbar(int position)
+    {
+        if (position == 0) {
+            toolbar.setTitle("Store");
+        }
+        if (position == 1) {
+            toolbar.setTitle("Loyalty");
+        }
+        if (position == 2) {
+            toolbar.setTitle("Offers");
+        }
+        if (position == 3) {
+            toolbar.setTitle("Notifications");
+        }
     }
 
 
@@ -190,43 +183,6 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         intent.putExtra("loyalty",1);
         startActivity(intent);
 
-    }
-
-
-
-
-    @Override
-    public Bitmap transform(Bitmap source) {
-
-        RenderScript rs = RenderScript.create(this);
-
-        Bitmap blurredBitmap = source.copy(Bitmap.Config.ARGB_8888, true);
-
-        // Allocate memory for Renderscript to work with
-        Allocation input = Allocation.createFromBitmap(rs, blurredBitmap, Allocation.MipmapControl.MIPMAP_FULL, Allocation.USAGE_SHARED);
-        Allocation output = Allocation.createTyped(rs, input.getType());
-
-        // Load up an instance of the specific script that we want to use.
-        ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-        script.setInput(input);
-
-        // Set the blur radius
-        script.setRadius(25);
-
-        // Start the ScriptIntrinisicBlur
-        script.forEach(output);
-
-        // Copy the output to the blurred bitmap
-        output.copyTo(blurredBitmap);
-
-        source.recycle();
-
-        return blurredBitmap;
-    }
-
-    @Override
-    public String key() {
-        return "blur";
     }
 
     public void hideKeyboard() {

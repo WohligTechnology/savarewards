@@ -31,6 +31,7 @@ public class ConfirmRedemption extends AppCompatActivity implements swipeListene
     int j=0;
 
     private boolean flag = false;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,13 @@ public class ConfirmRedemption extends AppCompatActivity implements swipeListene
         ivswipeleft.setOnTouchListener(onLeftSwipeListener);
 
         MIN_WIDTH = (int) getResources().getDimension(R.dimen._100dp);
-
+        back= (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         ninetyPercentScreenWidth = (int) (display.getWidth() * 0.9);

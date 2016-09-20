@@ -40,11 +40,13 @@ import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
+
 /**
  * Created by Mahesh on 8/tag2/2016.
  */
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    ViewPager viewPager;
+    AutoScrollViewPager viewPager;
     welcomepagerAdapter adapter;
     DotIndicator indicator;
     RelativeLayout im_new;
@@ -67,10 +69,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         setContentView(R.layout.fragment_welcome);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = (AutoScrollViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         indicator = (DotIndicator) findViewById(R.id.indicator);
         facebookLogin();
+//        viewPager.startAutoScroll();
+//        viewPager.setStopScrollWhenTouch(true);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

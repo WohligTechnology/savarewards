@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,8 @@ public class Location extends AppCompatActivity {
     LocationManager location_manager;
     String getLatitude;
     String getLongitude;
+    ImageView back;
+
 
     double x;
     double y;
@@ -90,6 +93,14 @@ public class Location extends AppCompatActivity {
                 }
                 location_manager.requestLocationUpdates(
                         LocationManager.GPS_PROVIDER, 0, 0, listner);
+            }
+        });
+        back = (ImageView) findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
